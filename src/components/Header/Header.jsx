@@ -1,13 +1,26 @@
-import { NavLink } from 'react-router-dom';
+import {
+  HeaderStyled,
+  HeaderWrapper,
+  NavBar,
+  NavLinkStyled,
+} from './Header.styled';
+import { Container } from '../../styles/StyledComponents';
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
 export const Header = () => {
   return (
-    <header>
-      <div>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/campers">Campers</NavLink>
-        <NavLink to="/favorites">Favorites</NavLink>
-      </div>
-    </header>
+    <HeaderStyled>
+      <Container>
+        <HeaderWrapper>
+          <NavBar>
+            <NavLinkStyled to="/">Home</NavLinkStyled>
+            <NavLinkStyled to="/campers">Catalog</NavLinkStyled>
+            <NavLinkStyled to="/favorites">Favorites</NavLinkStyled>
+          </NavBar>
+
+          <ThemeToggle />
+        </HeaderWrapper>
+      </Container>
+    </HeaderStyled>
   );
 };

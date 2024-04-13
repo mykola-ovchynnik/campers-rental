@@ -1,9 +1,9 @@
 import { Container } from '../styles/StyledComponents';
 
-export const FavoritesPage = () => {
+export const CampersCatalog = () => {
   return (
     <Container>
-      <h2>Favorites page</h2>
+      <h2>Campers catalog page</h2>
     </Container>
   );
 };
