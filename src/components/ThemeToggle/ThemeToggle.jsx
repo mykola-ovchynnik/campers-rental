@@ -1,7 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleTheme } from '../../store/theme/themeSlice';
-import { themeSelector } from '../../store/selectors';
+import {
+  themeSelector,
+  toggleTheme,
+} from '../../store/themeReducer/themeSlice';
 import {
   MoonIcon,
   Slider,

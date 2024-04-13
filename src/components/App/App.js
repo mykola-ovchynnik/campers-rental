@@ -8,8 +8,8 @@ import { Reviews } from '../Reviews/Reviews';
 import { CampersCatalog } from '../../pages/CampersCataloge';
 import { ThemeProvider } from 'styled-components';
 import { useSelector } from 'react-redux';
-import { themeSelector } from '../../store/selectors';
 import { darkTheme, lightTheme } from '../../styles/themes';
+import { themeSelector } from '../../store/themeReducer/themeSlice';
 
 export const App = () => {
   const darkMode = useSelector(themeSelector);
