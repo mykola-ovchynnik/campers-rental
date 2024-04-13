@@ -13,9 +13,15 @@ export const Header = () => {
       <Container>
         <HeaderWrapper>
           <NavBar>
-            <NavLinkStyled to="/">Home</NavLinkStyled>
-            <NavLinkStyled to="/campers">Catalog</NavLinkStyled>
-            <NavLinkStyled to="/favorites">Favorites</NavLinkStyled>
+            <NavLinkStyled to="/" activeclassname="active">
+              Home
+            </NavLinkStyled>
+            <NavLinkStyled to="/campers" activeclassname="active">
+              Catalog
+            </NavLinkStyled>
+            <NavLinkStyled to="/favorites" activeclassname="active">
+              Favorites
+            </NavLinkStyled>
           </NavBar>
 
           <ThemeToggle />
