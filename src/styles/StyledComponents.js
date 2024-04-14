@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 import { ReactComponent as HeartSVG } from '../icons/heart.svg';
-import { ReactComponent as StarSVG } from '../icons/star.svg';
-import { ReactComponent as LocationSVG } from '../icons/location.svg';
 
 export const Container = styled.div`
   max-width: 1440px;
@@ -52,7 +50,7 @@ export const RatingsLocationSpan = styled.span`
   align-items: center;
 `;
 
-export const StarIcon = styled(StarSVG)`
+export const StarLocationIcon = styled.svg`
   width: 16px;
   height: 16px;
   margin-right: 4px;
@@ -73,18 +71,11 @@ export const RatingLocation = styled.p`
   }
 `;
 
-export const LocationIcon = styled(LocationSVG)`
-  width: 16px;
-  height: 16px;
-  margin-right: 4px;
-`;
-
 export const CamperDescription = styled.p`
   display: inline-block;
   color: #475467;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 100%;
   margin-top: 24px;
 `;

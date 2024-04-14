@@ -27,14 +27,12 @@ export const Camper = ({ camper }) => {
   return (
     <CamperItem>
       <ListItemImage src={camper.gallery[0]} />
+
       <ItemMainInfo>
         <ItemNamePrice>
           <ItemName>{camper.name}</ItemName>
-
-          <ItemPriceFavorite>
-            <ItemPrice>{formatPrice(camper.price)}</ItemPrice>
-            <FavoritesButton id={camper._id} />
-          </ItemPriceFavorite>
+          <ItemPrice>{formatPrice(camper.price)}</ItemPrice>
+          <FavoritesButton id={camper._id} />
         </ItemNamePrice>
 
         <RatingLocationWrapper>
@@ -45,6 +43,7 @@ export const Camper = ({ camper }) => {
         <CamperDescription>{camper.description}</CamperDescription>
 
         <CamperAttributes />
+
         <ButtonShowMore
           to={`/campers/${camper._id}`}
           state={{ from: location }}

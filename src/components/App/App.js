@@ -30,7 +30,7 @@ export const App = () => {
         <Route path="/favorites" element={<FavoritesPage />} />
       </Route>
 
-      <Route path="*" />
+      <Route path="*" element={<Layout />} />
     </Routes>
     // </ThemeProvider>
   );
