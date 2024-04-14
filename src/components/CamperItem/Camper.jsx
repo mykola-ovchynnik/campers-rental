@@ -17,8 +17,11 @@ import { TotalRating } from '../TotalRating/TotalRating';
 import { Location } from '../Location/Location';
 import { FavoritesButton } from '../FavoritesButton/FavoritesButton';
 import { CamperAttributes } from '../CamperAttributes/CamperAttributes';
+import { useLocation } from 'react-router-dom';
 
 export const Camper = ({ camper }) => {
+  const location = useLocation();
+
   const rating = ratingCalculator(camper.reviews);
 
   return (
@@ -42,7 +45,12 @@ export const Camper = ({ camper }) => {
         <CamperDescription>{camper.description}</CamperDescription>
 
         <CamperAttributes />
-        <ButtonShowMore>Show more</ButtonShowMore>
+        <ButtonShowMore
+          to={`/campers/${camper._id}`}
+          state={{ from: location }}
+        >
+          Show more
+        </ButtonShowMore>
       </ItemMainInfo>
     </CamperItem>
   );

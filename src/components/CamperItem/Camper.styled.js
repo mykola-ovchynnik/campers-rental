@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const CamperItem = styled.li`
   display: flex;
@@ -48,7 +49,7 @@ export const ItemPrice = styled.p`
   font-size: 24px;
 `;
 
-export const ButtonShowMore = styled.button`
+export const ButtonShowMore = styled(Link)`
   margin-top: 24px;
   width: 166px;
   height: 56px;
