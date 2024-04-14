@@ -6,6 +6,7 @@ import {
 } from '../../store/campersReducer/campersSlice';
 import { useEffect } from 'react';
 import { getCampersThunk } from '../../store/thunk';
+import { Camper } from '../Camper/Camper';
 
 export const CampersList = () => {
   const campers = useSelector(campersSelector);
@@ -26,7 +27,16 @@ export const CampersList = () => {
       <ul>
         {campers &&
           campers.map(camper => {
-            return <li key={camper._id}>{camper.name}</li>;
+            return (
+              <Camper
+                key={camper._id}
+                id={camper._id}
+                img={camper.gallery[0]}
+                name={camper.name}
+                price={camper.price}
+              />
+            );
+            // return <li key={camper._id}>{camper.name}</li>;
           })}
       </ul>
       <button onClick={handleLoadMore}>Load more</button>
