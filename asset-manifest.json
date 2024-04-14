@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/campers-rental/static/css/main.e8100efa.css",
+    "main.js": "/campers-rental/static/js/main.24024018.js",
+    "static/media/heart.svg": "/campers-rental/static/media/heart.38e4225ae191dff9967afc42547a52da.svg",
+    "index.html": "/campers-rental/index.html",
+    "main.e8100efa.css.map": "/campers-rental/static/css/main.e8100efa.css.map",
+    "main.24024018.js.map": "/campers-rental/static/js/main.24024018.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e8100efa.css",
+    "static/js/main.24024018.js"
+  ]
+}
