@@ -7,7 +7,6 @@ export const favoritesSlice = createSlice({
     addFavorite: (state, { payload }) => {
       if (!state.favoriteCampers.includes(payload)) {
         state.favoriteCampers.push(payload);
-        console.log(`camper  ${payload} is added to local storage`);
       }
     },
     removeFavorite: (state, { payload }) => {

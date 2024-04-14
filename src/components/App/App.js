@@ -2,10 +2,10 @@ import { Route, Routes } from 'react-router-dom';
 import { Layout } from '../Layout/Layout';
 import { HomePage } from '../../pages/HomePage';
 import { FavoritesPage } from '../../pages/FavoritesPage';
-import { Camper } from '../Camper/Camper';
 import { Features } from '../Features/Features';
 import { Reviews } from '../Reviews/Reviews';
 import { CampersCatalog } from '../../pages/CampersCataloge';
+import { CamperItem } from '../CamperItem/Camper.styled';
 // import { ThemeProvider } from 'styled-components';
 // import { useSelector } from 'react-redux';
 // import { darkTheme, lightTheme } from '../../styles/themes';
@@ -22,7 +22,7 @@ export const App = () => {
 
         <Route path="/campers" element={<CampersCatalog />} />
 
-        <Route path="/campers/:camperId" element={<Camper />}>
+        <Route path="/campers/:camperId" element={<CamperItem />}>
           <Route path="/campers/:camperId/features" element={<Features />} />
           <Route path="/campers/:camperId/reviews" element={<Reviews />} />
         </Route>

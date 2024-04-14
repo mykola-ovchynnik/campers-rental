@@ -6,7 +6,8 @@ import {
 } from '../../store/campersReducer/campersSlice';
 import { useEffect } from 'react';
 import { getCampersThunk } from '../../store/thunk';
-import { Camper } from '../Camper/Camper';
+import { Camper } from '../CamperItem/Camper';
+import { CamperList } from '../../styles/StyledComponents';
 
 export const CampersList = () => {
   const campers = useSelector(campersSelector);
@@ -24,21 +25,12 @@ export const CampersList = () => {
   console.log(campers);
   return (
     <>
-      <ul>
+      <CamperList>
         {campers &&
           campers.map(camper => {
-            return (
-              <Camper
-                key={camper._id}
-                id={camper._id}
-                img={camper.gallery[0]}
-                name={camper.name}
-                price={camper.price}
-              />
-            );
-            // return <li key={camper._id}>{camper.name}</li>;
+            return <Camper key={camper._id} camper={camper} />;
           })}
-      </ul>
+      </CamperList>
       <button onClick={handleLoadMore}>Load more</button>
     </>
   );

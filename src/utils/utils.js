@@ -7,3 +7,11 @@ export function formatPrice(value) {
     useGrouping: false,
   }).format(value);
 }
+
+export const ratingCalculator = reviews => {
+  const totalRating = reviews.reduce(
+    (acc, review) => acc + review.reviewer_rating,
+    0
+  );
+  return (totalRating / reviews.length).toFixed(1);
+};
