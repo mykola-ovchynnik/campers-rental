@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   campersSelector,
   pageSelector,
+  resetCampersCatalog,
   setNextPage,
 } from '../../store/campersReducer/campersSlice';
 import { useEffect } from 'react';
@@ -15,11 +16,15 @@ export const CampersList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getCampersThunk(page));
-  }, [page, dispatch]);
+    dispatch(getCampersThunk(1));
+    return () => {
+      dispatch(resetCampersCatalog());
+    };
+  }, [dispatch]);
 
   const handleLoadMore = () => {
     dispatch(setNextPage());
+    dispatch(getCampersThunk(page + 1));
   };
 
   console.log(campers);
