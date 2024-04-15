@@ -3,8 +3,8 @@ import {
   addFavorite,
   removeFavorite,
   selectorFavorites,
-} from '../../store/favoritesReducer/favoritesSlice';
-import { HeartButton, HeartIcon } from '../../styles/StyledComponents';
+} from '../../../../store/favoritesReducer/favoritesSlice';
+import { HeartButton, HeartIcon } from '../../../../styles/StyledComponents';
 
 export const FavoritesButton = ({ id }) => {
   const favorites = useSelector(selectorFavorites);

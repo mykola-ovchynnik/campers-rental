@@ -1,51 +1,31 @@
-import { formatPrice, ratingCalculator } from '../../utils/utils';
 import {
   CamperItem,
   ListItemImage,
   ItemMainInfo,
-  ItemName,
-  ItemNamePrice,
-  ItemPrice,
   ButtonShowMore,
 } from './Camper.styled';
-import {
-  Button,
-  CamperDescription,
-  RatingLocationWrapper,
-} from '../../styles/StyledComponents';
-import { TotalRating } from '../TotalRating/TotalRating';
-import { Location } from '../Location/Location';
-import { FavoritesButton } from '../FavoritesButton/FavoritesButton';
+import { Button, CamperDescription } from '../../styles/StyledComponents';
+
 import { CamperAttributes } from '../CamperAttributes/CamperAttributes';
 import { useLocation } from 'react-router-dom';
-import { getAttributes } from '../../utils/getAttributes';
+import { CamperNamePrice } from './CamperSubComponents/ItemNamePrice';
+import { RatingLocationComponent } from './CamperSubComponents/RatingLocationComponent';
 
 export const Camper = ({ camper }) => {
   const location = useLocation();
-
-  const price = formatPrice(camper.price);
-  const rating = ratingCalculator(camper.reviews);
-  const attributes = getAttributes(camper);
 
   return (
     <CamperItem>
       <ListItemImage src={camper.gallery[0]} />
 
       <ItemMainInfo>
-        <ItemNamePrice>
-          <ItemName>{camper.name}</ItemName>
-          <ItemPrice>{price}</ItemPrice>
-          <FavoritesButton id={camper._id} />
-        </ItemNamePrice>
+        <CamperNamePrice camper={camper} />
 
-        <RatingLocationWrapper>
-          <TotalRating rating={rating} reviews={camper.reviews.length} />
-          <Location location={camper.location} />
-        </RatingLocationWrapper>
+        <RatingLocationComponent camper={camper} />
 
         <CamperDescription>{camper.description}</CamperDescription>
 
-        <CamperAttributes attributes={attributes} />
+        <CamperAttributes camper={camper} />
 
         <Button
           as={ButtonShowMore}
