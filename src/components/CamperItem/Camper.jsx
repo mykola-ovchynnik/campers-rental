@@ -6,10 +6,10 @@ import {
   ItemName,
   ItemNamePrice,
   ItemPrice,
-  ItemPriceFavorite,
   ButtonShowMore,
 } from './Camper.styled';
 import {
+  Button,
   CamperDescription,
   RatingLocationWrapper,
 } from '../../styles/StyledComponents';
@@ -18,11 +18,14 @@ import { Location } from '../Location/Location';
 import { FavoritesButton } from '../FavoritesButton/FavoritesButton';
 import { CamperAttributes } from '../CamperAttributes/CamperAttributes';
 import { useLocation } from 'react-router-dom';
+import { getAttributes } from '../../utils/getAttributes';
 
 export const Camper = ({ camper }) => {
   const location = useLocation();
 
+  const price = formatPrice(camper.price);
   const rating = ratingCalculator(camper.reviews);
+  const attributes = getAttributes(camper);
 
   return (
     <CamperItem>
@@ -31,7 +34,7 @@ export const Camper = ({ camper }) => {
       <ItemMainInfo>
         <ItemNamePrice>
           <ItemName>{camper.name}</ItemName>
-          <ItemPrice>{formatPrice(camper.price)}</ItemPrice>
+          <ItemPrice>{price}</ItemPrice>
           <FavoritesButton id={camper._id} />
         </ItemNamePrice>
 
@@ -42,14 +45,15 @@ export const Camper = ({ camper }) => {
 
         <CamperDescription>{camper.description}</CamperDescription>
 
-        <CamperAttributes />
+        <CamperAttributes attributes={attributes} />
 
-        <ButtonShowMore
+        <Button
+          as={ButtonShowMore}
           to={`/campers/${camper._id}`}
           state={{ from: location }}
         >
           Show more
-        </ButtonShowMore>
+        </Button>
       </ItemMainInfo>
     </CamperItem>
   );

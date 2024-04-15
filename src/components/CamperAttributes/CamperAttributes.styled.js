@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const AttributesList = styled.ul`
+  max-width: 100%;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
@@ -14,7 +15,7 @@ export const AttributeItem = styled.li`
   align-items: center;
   padding: 12px 18px;
   border-radius: 100px;
-  background: #f2f4f7;
+  background: var(--light-gray-color);
   font-weight: 500;
   line-height: 20px;
 `;
@@ -31,4 +32,5 @@ export const AttributeSvg = styled.svg`
 export const AttributeInfo = styled.p`
   font-weight: 500;
   line-height: 20px;
+  text-transform: capitalize;
 `;

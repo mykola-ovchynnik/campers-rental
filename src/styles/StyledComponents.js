@@ -9,17 +9,9 @@ export const Container = styled.div`
   padding-right: 64px;
 `;
 
-export const CamperList = styled.ul`
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  max-width: 888px;
-`;
-
 export const HeartIcon = styled(HeartSVG)`
-  fill: ${props => (props.isfavorite ? '#E44848' : 'none')};
-  stroke: ${props => (props.isfavorite ? 'none' : '#101828')};
+  fill: ${props => (props.isfavorite ? 'var(--red-color)' : 'none')};
+  stroke: ${props => (props.isfavorite ? 'none' : 'var(--black-color)')};
   transition: transform 0.1s ease-in-out;
   cursor: pointer;
 `;
@@ -67,15 +59,42 @@ export const RatingLocation = styled.p`
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: #101828;
+    background-color: var(--black-color);
   }
 `;
 
 export const CamperDescription = styled.p`
   display: inline-block;
-  color: #475467;
+  color: var(--gray-color);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   margin-top: 24px;
+`;
+
+export const Button = styled.button`
+  margin-top: 24px;
+  width: 166px;
+  height: 56px;
+  display: flex;
+  padding: 16px 40px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 200px;
+  background: var(--red-color);
+  color: var(--white-color);
+  font-weight: 500;
+  letter-spacing: -0.08px;
+  line-height: 24px;
+  transition: transform 0.1s ease-in-out;
+
+  &:hover {
+    background-color: var(--red-color-hover);
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
 `;

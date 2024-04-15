@@ -7,13 +7,12 @@ import { Container } from '../styles/StyledComponents';
 //   pageSelector,
 //   setNextPage,
 // } from '../store/campersReducer/campersSlice';
-import { CampersList } from '../components/CampersList/CampersList';
+import { CampersListComponent } from '../components/CampersList/CampersListComponent';
 
 export const CampersCatalog = () => {
   return (
     <Container>
-      <h2>Campers catalog page</h2>
-      <CampersList />
+      <CampersListComponent />
     </Container>
   );
 };

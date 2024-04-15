@@ -9,7 +9,7 @@
 }
 
 body {
-  color: #101828;
+  color: var(--black-color);
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-style: normal;
@@ -54,5 +54,5 @@ ol {
 
 a {
   text-decoration: none;
-  color: black;
+  color: var(--black-color);
 }

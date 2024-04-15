@@ -11,7 +11,6 @@ export const HeaderWrapper = styled.div`
   justify-content: space-between;
   padding-top: 24px;
   padding-bottom: 24px;
-  margin-bottom: 100px;
 `;
 
 export const NavBar = styled.div`

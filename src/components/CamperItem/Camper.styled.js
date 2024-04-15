@@ -11,8 +11,8 @@ export const CamperItem = styled.li`
 `;
 
 export const ListItemImage = styled.img`
-  width: 290px;
-  height: 310px;
+  max-width: 290px;
+  max-height: 310px;
   flex-shrink: 0;
   border-radius: 10px;
   object-fit: cover;
@@ -28,9 +28,8 @@ export const ItemMainInfo = styled.div`
 
 export const ItemNamePrice = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  max-width: 100%;
+  /* max-width: 100%; */
 `;
 
 export const ItemName = styled.h2`
@@ -40,9 +39,6 @@ export const ItemName = styled.h2`
 `;
 
 export const ItemPrice = styled.p`
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: auto;
   font-weight: 600;
   line-height: 30px;
   font-size: 24px;
@@ -50,28 +46,4 @@ export const ItemPrice = styled.p`
   margin-left: auto;
 `;
 
-export const ButtonShowMore = styled(Link)`
-  margin-top: 24px;
-  width: 166px;
-  height: 56px;
-  display: flex;
-  padding: 16px 40px;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  border-radius: 200px;
-  background: #e44848;
-  color: #ffffff;
-  font-weight: 500;
-  letter-spacing: -0.08px;
-  transition: transform 0.1s ease-in-out;
-
-  &:hover {
-    background-color: #d84343;
-    cursor: pointer;
-  }
-
-  &:active {
-    transform: scale(0.9);
-  }
-`;
+export const ButtonShowMore = styled(Link)``;

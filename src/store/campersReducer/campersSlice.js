@@ -2,17 +2,12 @@ import { createSlice } from '@reduxjs/toolkit';
 import { getCampersThunk } from '../thunk';
 import { handleFulfilledCampers } from './helpers';
 
-const initialState = { campers: [], page: 1 };
-
 export const campersSlice = createSlice({
   name: 'campers',
-  initialState,
+  initialState: { campers: [] },
   reducers: {
-    setNextPage(state) {
-      state.page += 1;
-    },
     resetCampersCatalog(state) {
-      return initialState;
+      return { campers: [] };
     },
   },
   extraReducers: builder => {
@@ -22,7 +17,6 @@ export const campersSlice = createSlice({
 
 export const campersReducer = campersSlice.reducer;
 
-export const { setNextPage, resetCampersCatalog } = campersSlice.actions;
+export const { resetCampersCatalog } = campersSlice.actions;
 
 export const campersSelector = state => state.campers.campers;
-export const pageSelector = state => state.campers.page;
