@@ -16,7 +16,7 @@ export const Header = () => {
             <NavLinkStyled to="/" activeclassname="active">
               Home
             </NavLinkStyled>
-            <NavLinkStyled to="/campers" activeclassname="active">
+            <NavLinkStyled to="/catalog" activeclassname="active">
               Catalog
             </NavLinkStyled>
             <NavLinkStyled to="/favorites" activeclassname="active">

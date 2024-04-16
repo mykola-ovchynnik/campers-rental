@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import {
   campersSelector,
-  resetCampersCatalog,
+  hasMoreSelector,
 } from '../../store/campersReducer/campersSlice';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { getCampersThunk } from '../../store/thunk';
 import { Camper } from '../CamperItem/Camper';
 import {
@@ -15,14 +15,8 @@ import {
 export const CampersListComponent = () => {
   const pageRef = useRef(1);
   const campers = useSelector(campersSelector);
+  const hasMore = useSelector(hasMoreSelector);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getCampersThunk(pageRef.current));
-    return () => {
-      dispatch(resetCampersCatalog());
-    };
-  }, [dispatch]);
 
   const handleLoadMore = () => {
     pageRef.current += 1;
@@ -32,16 +26,21 @@ export const CampersListComponent = () => {
   console.log(campers);
   return (
     <CampersListWrapper>
-      <CampersList>
-        {campers &&
-          campers.map(camper => {
-            return <Camper key={camper._id} camper={camper} />;
-          })}
-      </CampersList>
+      {campers && (
+        <>
+          <CampersList>
+            {campers.map(camper => {
+              return <Camper key={camper._id} camper={camper} />;
+            })}
+          </CampersList>
 
-      <LoadMoreButton type="button" onClick={handleLoadMore}>
-        Load more
-      </LoadMoreButton>
+          {hasMore && (
+            <LoadMoreButton type="button" onClick={handleLoadMore}>
+              Load more
+            </LoadMoreButton>
+          )}
+        </>
+      )}
     </CampersListWrapper>
   );
 };

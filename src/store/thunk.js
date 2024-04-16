@@ -5,7 +5,13 @@ export const getCampersThunk = createAsyncThunk(
   'campers/getCampers',
   async (page, { rejectWithValue }) => {
     try {
-      return getCampers(page);
+      const campers = await getCampers(page);
+
+      if (campers.length < 4) {
+        return { campers, hasMore: false };
+      }
+
+      return { campers, hasMore: true };
     } catch (error) {
       rejectWithValue(error);
     }

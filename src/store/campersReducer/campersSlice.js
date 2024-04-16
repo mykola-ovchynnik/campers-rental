@@ -6,7 +6,7 @@ export const campersSlice = createSlice({
   name: 'campers',
   initialState: { campers: [] },
   reducers: {
-    resetCampersCatalog(state) {
+    resetCampersCatalog() {
       return { campers: [] };
     },
   },
@@ -20,3 +20,4 @@ export const campersReducer = campersSlice.reducer;
 export const { resetCampersCatalog } = campersSlice.actions;
 
 export const campersSelector = state => state.campers.campers;
+export const hasMoreSelector = state => state.campers.hasMore;

@@ -29,7 +29,7 @@ export const Camper = ({ camper }) => {
 
         <Button
           as={ButtonShowMore}
-          to={`/campers/${camper._id}`}
+          to={`/catalog/${camper._id}`}
           state={{ from: location }}
         >
           Show more

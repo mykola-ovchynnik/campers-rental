@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import { Button } from '../../styles/StyledComponents';
 
 export const CampersListWrapper = styled.div`
-  padding-top: 100px;
-  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   gap: 50px;

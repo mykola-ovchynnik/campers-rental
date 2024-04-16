@@ -20,11 +20,11 @@ export const App = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
 
-        <Route path="/campers" element={<CampersCatalog />} />
+        <Route path="/catalog" element={<CampersCatalog />} />
 
-        <Route path="/campers/:camperId" element={<CamperItem />}>
-          <Route path="/campers/:camperId/features" element={<Features />} />
-          <Route path="/campers/:camperId/reviews" element={<Reviews />} />
+        <Route path="/catalog/:camperId" element={<CamperItem />}>
+          <Route path="/catalog/:camperId/features" element={<Features />} />
+          <Route path="/catalog/:camperId/reviews" element={<Reviews />} />
         </Route>
 
         <Route path="/favorites" element={<FavoritesPage />} />

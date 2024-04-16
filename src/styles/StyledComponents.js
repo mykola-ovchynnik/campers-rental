@@ -9,6 +9,13 @@ export const Container = styled.div`
   padding-right: 64px;
 `;
 
+export const CatalogPage = styled.div`
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  gap: 64px;
+`;
+
 export const HeartIcon = styled(HeartSVG)`
   fill: ${props => (props.isfavorite ? 'var(--red-color)' : 'none')};
   stroke: ${props => (props.isfavorite ? 'none' : 'var(--black-color)')};
