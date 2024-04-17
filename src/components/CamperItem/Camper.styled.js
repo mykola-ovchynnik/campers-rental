@@ -6,7 +6,7 @@ export const CamperItem = styled.li`
   gap: 24px;
   padding: 24px;
   border-radius: 20px;
-  border: 1px solid rgba(16, 24, 40, 0.2);
+  border: 1px solid ${({ theme }) => theme.border};
   width: 100%;
 `;
 
@@ -29,7 +29,6 @@ export const ItemMainInfo = styled.div`
 export const ItemNamePrice = styled.div`
   display: flex;
   align-items: center;
-  /* max-width: 100%; */
 `;
 
 export const ItemName = styled.h2`

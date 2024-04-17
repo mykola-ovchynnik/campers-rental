@@ -3,22 +3,14 @@ import { Button } from '../../styles/StyledComponents';
 import { FilterForm, FilterText } from './CatalogFilter.styled';
 import { EquipmentFilter } from './EquipmentFilter/EquipmentFilter';
 import { LocationFilter } from './LocationFilter/LocationFilter';
-import { getCampersThunk } from '../../store/thunk';
-import { equipmentItems } from '../../utils/filterItems';
-import { typeItems } from '../../utils/filterItems';
+import { equipmentItems, typeItems } from '../../utils/filterItems';
 
 export const CatalogFilter = () => {
-  const {
-    register,
-    handleSubmit,
-    // formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
-  const onSubmit = data => {
-    if (Object.values(data).length === 0) {
+  const onSubmit = filterData => {
+    if (Object.values(filterData).every(value => !value)) {
       alert('Form is empty');
-    } else {
-      console.log(data);
     }
   };
 

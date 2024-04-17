@@ -9,13 +9,6 @@ export const Container = styled.div`
   padding-right: 64px;
 `;
 
-export const CatalogPage = styled.div`
-  padding-top: 100px;
-  padding-bottom: 100px;
-  display: flex;
-  gap: 64px;
-`;
-
 export const HeartIcon = styled(HeartSVG)`
   fill: ${props => (props.isfavorite ? 'var(--red-color)' : 'none')};
   stroke: ${props => (props.isfavorite ? 'none' : 'var(--black-color)')};
@@ -53,6 +46,7 @@ export const StarLocationIcon = styled.svg`
   width: 16px;
   height: 16px;
   margin-right: 4px;
+  stroke: ${({ theme }) => theme.text};
 `;
 
 export const RatingLocation = styled.p`
@@ -66,7 +60,7 @@ export const RatingLocation = styled.p`
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: var(--black-color);
+    background-color: ${({ theme }) => theme.text};
   }
 `;
 

@@ -5,7 +5,7 @@ import {
   NavLinkStyled,
 } from './Header.styled';
 import { Container } from '../../styles/StyledComponents';
-// import ThemeToggle from '../ThemeToggle/ThemeToggle';
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
 export const Header = () => {
   return (
@@ -24,7 +24,7 @@ export const Header = () => {
             </NavLinkStyled>
           </NavBar>
 
-          {/* <ThemeToggle /> */}
+          <ThemeToggle />
         </HeaderWrapper>
       </Container>
     </HeaderStyled>

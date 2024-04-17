@@ -2,8 +2,8 @@ import { NavLink } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 export const HeaderStyled = styled.header`
-  /* background-color: ${({ theme }) => theme.body}; */
-  background-color: #f2f4f7;
+  background-color: ${({ theme }) => theme.body};
+  border-bottom: 1px solid ${({ theme }) => theme.border};
 `;
 
 export const HeaderWrapper = styled.div`
@@ -22,8 +22,7 @@ export const NavLinkStyled = styled(NavLink)`
   font-size: 20px;
   font-weight: 600;
   transition: scale 0.2s;
-  /* color: ${({ theme }) => theme.text}; */
-  color: #101828;
+  color: ${({ theme }) => theme.text};
   position: relative;
 
   &.active::after {
@@ -33,8 +32,7 @@ export const NavLinkStyled = styled(NavLink)`
     bottom: -3px;
     width: 100%;
     height: 3px;
-    /* background-color: ${({ theme }) => theme.red}; */
-    background-color: #e44848;
+    background-color: ${({ theme }) => theme.red};
     z-index: 5;
   }
 

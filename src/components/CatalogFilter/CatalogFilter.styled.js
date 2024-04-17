@@ -28,7 +28,7 @@ export const LocationSvg = styled.svg`
   position: absolute;
   left: 18px;
   bottom: 18px;
-  stroke: var(--black-color);
+  stroke: rgba(16, 24, 40, 0.6); /* default color */
 `;
 
 export const FilterTextInput = styled.input`
@@ -48,12 +48,12 @@ export const FilterTextInput = styled.input`
     color: rgba(16, 24, 40, 0.6);
   }
 
-  &:placeholder-shown + ${LocationSvg} {
-    stroke: rgba(16, 24, 40, 0.6);
-  }
-
   &:focus {
     outline: none;
+  }
+
+  &:focus + ${LocationSvg}, &:not(:placeholder-shown) + ${LocationSvg} {
+    stroke: var(--black-color);
   }
 `;
 

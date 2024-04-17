@@ -20,10 +20,12 @@ export const CampersListComponent = () => {
 
   const handleLoadMore = () => {
     pageRef.current += 1;
+
     dispatch(getCampersThunk(pageRef.current));
   };
 
   console.log(campers);
+
   return (
     <CampersListWrapper>
       {campers && (
