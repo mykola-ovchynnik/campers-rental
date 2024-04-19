@@ -16,6 +16,8 @@ export const lightTheme = {
   star: '#FFC531',
   iconStroke: '#101828',
   favoritesIconFill: '#E44848',
+
+  modalBackdrop: 'rgba(17, 18, 19, 0.4)',
 };
 
 export const darkTheme = {
@@ -36,4 +38,6 @@ export const darkTheme = {
   star: '#CCAA22',
   iconStroke: '#F7F7F7',
   favoritesIconFill: '#E44848',
+
+  modalBackdrop: 'rgba(17, 18, 19, 0.4)',
 };

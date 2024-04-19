@@ -9,9 +9,11 @@ import { CamperAttributes } from '../CamperAttributes/CamperAttributes';
 import { CamperNamePrice } from './CamperSubComponents/ItemNamePrice';
 import { RatingLocationComponent } from './CamperSubComponents/RatingLocation/RatingLocationComponent';
 import defaultImage from '../../icons/van_rent.jpg';
-import { showModal } from '../../store/modalReducer/modalReducer';
+import { useLocation } from 'react-router-dom';
 
 export const Camper = ({ camper }) => {
+  const location = useLocation();
+
   return (
     <CamperItem>
       <ListItemImage
@@ -32,7 +34,7 @@ export const Camper = ({ camper }) => {
 
         <CamperAttributes camper={camper} />
 
-        <ShowMoreBtn onClick={() => showModal(camper._id)}>
+        <ShowMoreBtn to={`/catalog/${camper._id}`} state={{ from: location }}>
           Show more
         </ShowMoreBtn>
       </ItemMainInfo>

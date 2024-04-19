@@ -13,7 +13,11 @@ export const CampersList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 32px;
-  max-width: 888px;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    max-width: 888px;
+  }
 `;
 
 export const LoadMoreButton = styled(Button)`
@@ -26,9 +30,14 @@ export const LoadMoreButton = styled(Button)`
   border-radius: 200px;
   border: 1px solid rgba(71, 84, 103, 0.2);
   transition: border 0.1s ease-in-out, transform 0.1s ease-in-out;
+  width: 100%;
 
   &:hover {
     background-color: white;
     border: 1px solid var(--Button, #e44848);
+  }
+
+  @media (min-width: 768px) {
+    width: auto;
   }
 `;

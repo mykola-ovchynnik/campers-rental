@@ -13,3 +13,9 @@ export const getCampers = async (page = 1) => {
 
   return data;
 };
+
+export const getCamperById = async id => {
+  const { data } = await axios.get(`/adverts/${id}`);
+
+  return data;
+};

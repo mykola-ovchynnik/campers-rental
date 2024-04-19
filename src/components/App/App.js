@@ -7,6 +7,7 @@ import { ThemeProvider } from 'styled-components';
 import { useSelector } from 'react-redux';
 import { darkTheme, lightTheme } from '../../styles/themes';
 import { themeSelector } from '../../store/themeReducer/themeSlice';
+import { CamperModal } from '../CamperItem/CamperModal/CamperModal';
 
 export const App = () => {
   const darkMode = useSelector(themeSelector);
@@ -17,7 +18,15 @@ export const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
 
-          <Route path="/catalog" element={<CampersCatalog />} />
+          <Route path="/catalog" element={<CampersCatalog />}>
+            <Route path="/catalog/:id" element={<CamperModal />}>
+              {/* <Route
+                path="/catalog/:id/features"
+                element={<CampersCatalog />}
+              />
+              <Route path="/catalog/:id/reviews" element={<CampersCatalog />} /> */}
+            </Route>
+          </Route>
 
           <Route path="/favorites" element={<FavoritesPage />} />
         </Route>

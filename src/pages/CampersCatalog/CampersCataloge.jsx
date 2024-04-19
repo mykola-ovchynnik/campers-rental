@@ -6,12 +6,10 @@ import { getCampersThunk } from '../../store/thunk';
 import { useDispatch, useSelector } from 'react-redux';
 import { campersSelector } from '../../store/campersReducer/campersSlice';
 import { CatalogPage, CatalogTheme } from './CampersCatalog.styled.js';
-import { CamperModal } from '../../components/CamperItem/CamperModal/CamperModal.jsx';
-import { selectorModal } from '../../store/modalReducer/modalReducer.js';
 
 export const CampersCatalog = () => {
   const campers = useSelector(campersSelector);
-  const isShowModal = useSelector(selectorModal);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -25,7 +23,6 @@ export const CampersCatalog = () => {
         <CatalogPage>
           <CatalogFilter />
           <CampersListComponent />
-          {isShowModal && <CamperModal />}
         </CatalogPage>
       </Container>
     </CatalogTheme>

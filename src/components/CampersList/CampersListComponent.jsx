@@ -3,7 +3,7 @@ import {
   campersSelector,
   hasMoreSelector,
 } from '../../store/campersReducer/campersSlice';
-import { useRef } from 'react';
+import { Suspense, useRef } from 'react';
 import { getCampersThunk } from '../../store/thunk';
 import { Camper } from '../CamperItem/Camper';
 import {
@@ -11,6 +11,7 @@ import {
   CampersList,
   LoadMoreButton,
 } from './CampersList.styled';
+import { Outlet } from 'react-router-dom';
 
 export const CampersListComponent = () => {
   const pageRef = useRef(1);
@@ -43,6 +44,9 @@ export const CampersListComponent = () => {
           )}
         </>
       )}
+      <Suspense>
+        <Outlet />
+      </Suspense>
     </CampersListWrapper>
   );
 };

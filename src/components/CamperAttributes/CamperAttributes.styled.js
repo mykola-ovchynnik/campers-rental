@@ -18,6 +18,11 @@ export const AttributeItem = styled.li`
   background: ${({ theme }) => theme.input};
   font-weight: 500;
   line-height: 20px;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: auto;
+  }
 `;
 
 export const AttributeSvg = styled.svg`
@@ -27,8 +32,6 @@ export const AttributeSvg = styled.svg`
   justify-content: center;
   align-items: center;
   margin-right: 8px;
-  /* stroke: ${({ theme }) => theme.iconStroke}; */
-  /* fill: ${({ theme }) => theme.iconStroke}; */
 `;
 
 export const AttributeInfo = styled.p`
