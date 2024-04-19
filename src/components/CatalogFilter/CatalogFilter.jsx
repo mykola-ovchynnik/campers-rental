@@ -6,17 +6,18 @@ import { LocationFilter } from './LocationFilter/LocationFilter';
 import { equipmentItems, typeItems } from '../../utils/filterItems';
 
 export const CatalogFilter = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, setValue } = useForm();
 
   const onSubmit = filterData => {
     if (Object.values(filterData).every(value => !value)) {
       alert('Form is empty');
     }
+    console.log(filterData);
   };
 
   return (
     <FilterForm id="filterForm" onSubmit={handleSubmit(onSubmit)}>
-      <LocationFilter register={register} />
+      <LocationFilter register={register} setValue={setValue} />
 
       <FilterText>Filters</FilterText>
 
@@ -24,12 +25,16 @@ export const CatalogFilter = () => {
         legend={'Vehicle Equipment'}
         itemsArr={equipmentItems}
         register={register}
+        type={'checkbox'}
+        name={''}
       />
 
       <EquipmentFilter
         legend={'Vehicle Type'}
         itemsArr={typeItems}
         register={register}
+        type={'radio'}
+        name={'vehicleType'}
       />
 
       <Button type="submit">Search</Button>

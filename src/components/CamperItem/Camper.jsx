@@ -4,16 +4,13 @@ import {
   ItemMainInfo,
   ButtonShowMore,
 } from './Camper.styled';
-import { Button, CamperDescription } from '../../styles/StyledComponents';
-
+import { CamperDescription } from '../../styles/StyledComponents';
 import { CamperAttributes } from '../CamperAttributes/CamperAttributes';
-import { useLocation } from 'react-router-dom';
 import { CamperNamePrice } from './CamperSubComponents/ItemNamePrice';
-import { RatingLocationComponent } from './CamperSubComponents/RatingLocationComponent';
+import { RatingLocationComponent } from './CamperSubComponents/RatingLocation/RatingLocationComponent';
+import { ShowMoreBtn } from './CamperModal/CamperModal.styled';
 
 export const Camper = ({ camper }) => {
-  const location = useLocation();
-
   return (
     <CamperItem>
       <ListItemImage src={camper.gallery[0]} />
@@ -27,13 +24,7 @@ export const Camper = ({ camper }) => {
 
         <CamperAttributes camper={camper} />
 
-        <Button
-          as={ButtonShowMore}
-          to={`/catalog/${camper._id}`}
-          state={{ from: location }}
-        >
-          Show more
-        </Button>
+        <ShowMoreBtn as={ButtonShowMore}>Show more</ShowMoreBtn>
       </ItemMainInfo>
     </CamperItem>
   );

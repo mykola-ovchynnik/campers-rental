@@ -9,7 +9,13 @@ import {
   Legend,
 } from '../CatalogFilter.styled';
 
-export const EquipmentFilter = ({ legend, itemsArr, register }) => {
+export const EquipmentFilter = ({
+  legend,
+  itemsArr,
+  register,
+  type,
+  name = '',
+}) => {
   return (
     <Fieldset>
       <Legend>{legend}</Legend>
@@ -18,10 +24,10 @@ export const EquipmentFilter = ({ legend, itemsArr, register }) => {
         {itemsArr.map((item, index) => (
           <FilterItemLabel htmlFor={item.name} key={index}>
             <FilterCheckbox
-              {...register(item.name)}
-              type="checkbox"
+              {...(name === '' ? register(item.name) : register(name))}
+              type={type}
               id={item.name}
-              name={item.name}
+              name={name === '' ? item.name : name}
               value={item.name}
             />
 

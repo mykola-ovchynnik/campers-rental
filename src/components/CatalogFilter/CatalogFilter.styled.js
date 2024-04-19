@@ -4,6 +4,7 @@ export const FilterForm = styled.form`
   max-width: 360px;
   display: flex;
   flex-direction: column;
+  color: ${({ theme }) => theme.text};
 `;
 
 export const FilterLocationWrapper = styled.div`
@@ -15,7 +16,7 @@ export const FilterLocationWrapper = styled.div`
 `;
 
 export const FilterText = styled.p`
-  color: var(--gray-color);
+  color: ${({ theme }) => theme.secondaryText};
   font-weight: 500;
   line-height: 24px;
   margin-top: 32px;
@@ -28,10 +29,11 @@ export const LocationSvg = styled.svg`
   position: absolute;
   left: 18px;
   bottom: 18px;
-  stroke: rgba(16, 24, 40, 0.6); /* default color */
+  stroke: ${({ theme }) => theme.placeholder};
 `;
 
 export const FilterTextInput = styled.input`
+  color: inherit;
   width: 360px;
   height: 56px;
   display: flex;
@@ -39,13 +41,14 @@ export const FilterTextInput = styled.input`
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-  border: none;
+  border: 'none';
+
   border-radius: 10px;
-  background: var(--white-color);
+  background: ${({ theme }) => theme.input};
   line-height: 20px;
 
   &::placeholder {
-    color: rgba(16, 24, 40, 0.6);
+    color: ${({ theme }) => theme.placeholder};
   }
 
   &:focus {
@@ -53,12 +56,11 @@ export const FilterTextInput = styled.input`
   }
 
   &:focus + ${LocationSvg}, &:not(:placeholder-shown) + ${LocationSvg} {
-    stroke: var(--black-color);
+    stroke: ${({ theme }) => theme.iconStroke};
   }
 `;
 
 export const TextInputLabel = styled.label`
-  color: rgba(16, 24, 40, 0.6);
   font-weight: 500;
   line-height: 24px;
 `;
@@ -77,7 +79,6 @@ export const Fieldset = styled.fieldset`
 export const Legend = styled.legend`
   position: relative;
   margin-bottom: 48px;
-  color: #101828;
 
   font-size: 20px;
   font-weight: 600;
@@ -90,7 +91,7 @@ export const Legend = styled.legend`
     bottom: -24px;
     width: 360px;
     height: 1px;
-    background-color: rgba(16, 24, 40, 0.1);
+    background-color: ${({ theme }) => theme.border};
     z-index: 5;
   }
 `;
@@ -106,7 +107,7 @@ export const FilterItemWrapper = styled.div`
   width: 113px;
   height: 95px;
   border-radius: 10px;
-  border: 1px solid rgba(16, 24, 40, 0.2);
+  border: 1px solid ${({ theme }) => theme.border};
 
   display: flex;
   flex-direction: column;
@@ -118,8 +119,15 @@ export const FilterItemWrapper = styled.div`
 export const FilterCheckbox = styled.input`
   display: none;
 
-  &:checked + ${FilterItemWrapper} {
-    border-color: var(--red-color);
+  &[type='checkbox']:checked
+    + ${FilterItemWrapper},
+    &[type='radio']:checked
+    + ${FilterItemWrapper} {
+    border-color: ${({ theme }) => theme.filterChecked};
+  }
+
+  &[type='radio']:not(:checked) + ${FilterItemWrapper} {
+    border-color: ${({ theme }) => theme.border};
   }
 `;
 
@@ -130,6 +138,8 @@ export const FilterItemLabel = styled.label`
 `;
 
 export const FilterIcon = styled.svg`
+  stroke: ${({ theme }) => theme.iconStroke};
+  fill: ${({ theme }) => theme.iconFill};
   width: 32px;
   height: 32px;
 `;
@@ -137,7 +147,6 @@ export const FilterIcon = styled.svg`
 export const ItemName = styled.p`
   width: 95px;
   text-align: center;
-  color: var(--black-color);
   font-weight: 500;
   line-height: 20px;
 `;

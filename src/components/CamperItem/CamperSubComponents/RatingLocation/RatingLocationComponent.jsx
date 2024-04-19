@@ -1,6 +1,6 @@
-import { RatingLocationWrapper } from '../../../styles/StyledComponents';
-import { Location } from './Location';
+import { RatingLocationWrapper } from './RatingLocation.styled';
 import { TotalRating } from './TotalRating';
+import { Location } from './Location';
 
 export const RatingLocationComponent = ({ camper }) => {
   return (

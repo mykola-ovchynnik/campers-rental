@@ -1,9 +1,9 @@
+import { ReactComponent as LocationSVG } from '../../../../icons/location.svg';
 import {
-  StarLocationIcon,
   RatingLocation,
   RatingsLocationSpan,
-} from '../../../styles/StyledComponents';
-import { ReactComponent as LocationSVG } from '../../../icons/location.svg';
+  StarLocationIcon,
+} from './RatingLocation.styled';
 
 export const Location = ({ location }) => {
   return (

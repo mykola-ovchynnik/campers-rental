@@ -24,7 +24,7 @@ export const CampersListComponent = () => {
     dispatch(getCampersThunk(pageRef.current));
   };
 
-  console.log(campers);
+  console.log('rendering campers: ', campers);
 
   return (
     <CampersListWrapper>

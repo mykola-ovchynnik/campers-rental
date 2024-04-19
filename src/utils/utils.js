@@ -15,3 +15,10 @@ export const ratingCalculator = reviews => {
   );
   return (totalRating / reviews.length).toFixed(1);
 };
+
+export const validateInput = (e, setValue, setIsValid) => {
+  const isValid = /^[A-Za-z,\s]*$/.test(e.target.value);
+  setValue('location', e.target.value);
+  setIsValid(isValid);
+  return isValid;
+};

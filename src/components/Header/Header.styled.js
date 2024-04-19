@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 export const HeaderStyled = styled.header`
-  background-color: ${({ theme }) => theme.body};
+  background-color: ${({ theme }) => theme.header};
   border-bottom: 1px solid ${({ theme }) => theme.border};
 `;
 
@@ -32,7 +32,7 @@ export const NavLinkStyled = styled(NavLink)`
     bottom: -3px;
     width: 100%;
     height: 3px;
-    background-color: ${({ theme }) => theme.red};
+    background-color: ${({ theme }) => theme.border};
     z-index: 5;
   }
 

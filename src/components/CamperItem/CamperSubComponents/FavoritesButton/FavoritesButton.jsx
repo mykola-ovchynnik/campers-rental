@@ -4,18 +4,18 @@ import {
   removeFavorite,
   selectorFavorites,
 } from '../../../../store/favoritesReducer/favoritesSlice';
-import { HeartButton, HeartIcon } from '../../../../styles/StyledComponents';
+import { HeartButton, HeartIcon } from './FavoritesButton.styled';
 
-export const FavoritesButton = ({ id }) => {
+export const FavoritesButton = ({ camper }) => {
   const favorites = useSelector(selectorFavorites);
   const dispatch = useDispatch();
-  const isFavorite = favorites.includes(id);
+  const isFavorite = favorites.some(favorite => favorite._id === camper._id);
 
   const handleFavoriteClick = () => {
     if (isFavorite) {
-      dispatch(removeFavorite(id));
+      dispatch(removeFavorite(camper));
     } else {
-      dispatch(addFavorite(id));
+      dispatch(addFavorite(camper));
     }
   };
   return (

@@ -9,7 +9,7 @@ export const CamperNamePrice = ({ camper }) => {
     <ItemNamePrice>
       <ItemName>{camper.name}</ItemName>
       <ItemPrice>{price}</ItemPrice>
-      <FavoritesButton id={camper._id} />
+      <FavoritesButton camper={camper} />
     </ItemNamePrice>
   );
 };

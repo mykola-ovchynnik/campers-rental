@@ -5,13 +5,13 @@ export const favoritesSlice = createSlice({
   initialState: { favoriteCampers: [] },
   reducers: {
     addFavorite: (state, { payload }) => {
-      if (!state.favoriteCampers.includes(payload)) {
+      if (!state.favoriteCampers.some(camper => camper._id === payload._id)) {
         state.favoriteCampers.push(payload);
       }
     },
     removeFavorite: (state, { payload }) => {
       state.favoriteCampers = state.favoriteCampers.filter(
-        id => id !== payload
+        camper => camper._id !== payload._id
       );
     },
   },
