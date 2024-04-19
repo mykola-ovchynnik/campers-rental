@@ -2,18 +2,26 @@ import {
   CamperItem,
   ListItemImage,
   ItemMainInfo,
-  ButtonShowMore,
+  ShowMoreBtn,
 } from './Camper.styled';
 import { CamperDescription } from '../../styles/StyledComponents';
 import { CamperAttributes } from '../CamperAttributes/CamperAttributes';
 import { CamperNamePrice } from './CamperSubComponents/ItemNamePrice';
 import { RatingLocationComponent } from './CamperSubComponents/RatingLocation/RatingLocationComponent';
-import { ShowMoreBtn } from './CamperModal/CamperModal.styled';
+import defaultImage from '../../icons/van_rent.jpg';
+import { showModal } from '../../store/modalReducer/modalReducer';
 
 export const Camper = ({ camper }) => {
   return (
     <CamperItem>
-      <ListItemImage src={camper.gallery[0]} />
+      <ListItemImage
+        src={camper.gallery[0]}
+        alt="Camper image"
+        onError={e => {
+          e.target.onerror = null;
+          e.target.src = defaultImage;
+        }}
+      />
 
       <ItemMainInfo>
         <CamperNamePrice camper={camper} />
@@ -24,7 +32,9 @@ export const Camper = ({ camper }) => {
 
         <CamperAttributes camper={camper} />
 
-        <ShowMoreBtn as={ButtonShowMore}>Show more</ShowMoreBtn>
+        <ShowMoreBtn onClick={() => showModal(camper._id)}>
+          Show more
+        </ShowMoreBtn>
       </ItemMainInfo>
     </CamperItem>
   );
