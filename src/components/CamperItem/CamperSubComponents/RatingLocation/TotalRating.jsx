@@ -7,14 +7,13 @@ import {
 } from './RatingLocation.styled';
 
 export const TotalRating = ({ reviews }) => {
-  const rating = ratingCalculator(reviews);
+  const rating = Array.isArray(reviews) ? ratingCalculator(reviews) : 0;
 
   return (
     <RatingsLocationSpan>
       <StarLocationIcon as={StarSVG} />
       <RatingLocation className="rating">
-        {`${rating}`}
-        {`(${reviews.length} Reviews)`}
+        {rating >= 0 ? `${rating} (${reviews.length} Reviews)` : 'No reviews'}
       </RatingLocation>
     </RatingsLocationSpan>
   );
