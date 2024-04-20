@@ -34,7 +34,9 @@ export const CamperModal = () => {
   return (
     <ModalBackdrop onClick={handleBackdropClick}>
       <CamperWindow>
-        <RatingLocationComponent camper={camper} />
+        {Object.keys(camper).length > 0 && (
+          <RatingLocationComponent camper={camper} />
+        )}
       </CamperWindow>
     </ModalBackdrop>
   );
