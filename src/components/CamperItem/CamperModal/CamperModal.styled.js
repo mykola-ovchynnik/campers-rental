@@ -13,3 +13,16 @@ export const ModalBackdrop = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+export const CamperWindow = styled.div`
+  width: 982px;
+  min-height: 720px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  border-radius: 20px;
+  background: ${({ theme }) => theme.body};
+`;
