@@ -15,7 +15,7 @@ export const CampersCatalog = () => {
   useEffect(() => {
     campers.length <= 0 && dispatch(getCampersThunk(1));
     return () => {};
-  }, [dispatch]);
+  }, [dispatch, campers.length]);
 
   return (
     <CatalogTheme>
