@@ -9,11 +9,12 @@ export const HeaderStyled = styled.header`
 export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-top: 24px;
   padding-bottom: 24px;
 `;
 
-export const NavBar = styled.div`
+export const NavBar = styled.nav`
   display: flex;
   gap: 32px;
 `;

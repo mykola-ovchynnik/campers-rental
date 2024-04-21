@@ -1,13 +1,20 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { CamperWindow, ModalBackdrop } from './CamperModal.styled';
-import { useCallback, useEffect } from 'react';
+import {
+  AdditionalInfoButton,
+  CamperWindow,
+  ModalBackdrop,
+} from './CamperModal.styled';
+import { Suspense, useCallback, useEffect } from 'react';
 import { getCamperByIdThunk } from '../../../store/thunk';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Outlet } from 'react-router-dom';
 import { singleCamperSelector } from '../../../store/campersReducer/campersSlice';
 import { useEscapeClose } from '../../../hooks/useEscapeClose';
 import { useBackdropClose } from '../../../hooks/useBackdropClose';
 import { removeBodyModal, setBodyModal } from '../../../utils/bodyInteraction';
-import { RatingLocationComponent } from '../CamperSubComponents/RatingLocation/RatingLocationComponent';
+import { ModalHeadComponent } from './ModalSubComp/modalHead/ModalHeadComponent';
+import { ModalImageList } from './ModalSubComp/ModalImageList/ModalImageList';
+import { CamperDescription } from '../Camper.styled';
+import { ModalAdditionalInfo } from './ModalSubComp/ModalAdditionalInfo/ModalAdditionalInfo';
 
 export const CamperModal = () => {
   const { id } = useParams();
@@ -34,9 +41,19 @@ export const CamperModal = () => {
   return (
     <ModalBackdrop onClick={handleBackdropClick}>
       <CamperWindow>
-        {Object.keys(camper).length > 0 && (
-          <RatingLocationComponent camper={camper} />
-        )}
+        <ModalHeadComponent camper={camper} />
+
+        <ModalImageList images={camper.gallery}></ModalImageList>
+
+        <CamperDescription className="modalDescription">
+          {camper.description}
+        </CamperDescription>
+
+        <ModalAdditionalInfo camper={camper} />
+
+        <Suspense>
+          <Outlet />
+        </Suspense>
       </CamperWindow>
     </ModalBackdrop>
   );

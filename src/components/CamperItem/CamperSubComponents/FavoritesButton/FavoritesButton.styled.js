@@ -9,6 +9,8 @@ export const HeartIcon = styled(HeartSVG)`
 `;
 
 export const HeartButton = styled.button`
+  position: absolute;
+  right: 0;
   width: 24px;
   height: 24px;
   flex-shrink: 0;

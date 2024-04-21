@@ -3,78 +3,80 @@ import { Link } from 'react-router-dom';
 
 export const CamperItem = styled.li`
   display: flex;
-  flex-direction: column;
   gap: 24px;
   padding: 24px;
   border-radius: 20px;
   border: 1px solid ${({ theme }) => theme.border};
   width: 100%;
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-  }
 `;
 
 export const ListItemImage = styled.img`
-  width: 100%;
-  height: auto;
+  width: 290px;
+  height: 310px;
   flex-shrink: 0;
   border-radius: 10px;
   object-fit: cover;
   background: lightgray center center no-repeat;
-
-  @media (min-width: 768px) {
-    width: 290px;
-    height: 310px;
-  }
 `;
 
 export const ItemMainInfo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 526px;
+`;
+
+export const CamperDescription = styled.p`
+  display: inline;
+  color: var(--gray-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 24px;
   width: 100%;
 
-  @media (min-width: 768px) {
-    max-width: 526px;
+  &.modalDescription {
+    margin-top: 0;
+    white-space: break-spaces;
+    overflow: visible;
   }
 `;
 
 export const ItemNamePrice = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  @media (min-width: 768px) {
-    flex-direction: row;
-    align-items: center;
-  }
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 526px;
+  margin-bottom: 10px;
 `;
 
 export const ItemName = styled.h2`
   font-weight: 600;
   line-height: 30px;
   font-size: 24px;
+
+  &.modalName {
+    margin-bottom: 10px;
+  }
 `;
 
 export const ItemPrice = styled.p`
   font-weight: 600;
   line-height: 30px;
   font-size: 24px;
-  margin-right: 0;
-  margin-left: 0;
-  margin-top: 10px;
+  margin-right: 30px;
 
-  @media (min-width: 768px) {
-    margin-right: 10px;
-    margin-left: auto;
-    margin-top: 0;
+  &.modalPrice {
+    margin-top: 16px;
+    margin-right: 0;
   }
 `;
 
 export const ShowMoreBtn = styled(Link)`
   margin-top: 24px;
-  width: 100%;
+  width: 166px;
   height: 56px;
   display: flex;
   padding: 16px 40px;
@@ -96,9 +98,5 @@ export const ShowMoreBtn = styled(Link)`
 
   &:active {
     transform: scale(0.9);
-  }
-
-  @media (min-width: 768px) {
-    width: 166px;
   }
 `;

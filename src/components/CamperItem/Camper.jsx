@@ -3,8 +3,8 @@ import {
   ListItemImage,
   ItemMainInfo,
   ShowMoreBtn,
+  CamperDescription,
 } from './Camper.styled';
-import { CamperDescription } from '../../styles/StyledComponents';
 import { CamperAttributes } from '../CamperAttributes/CamperAttributes';
 import { CamperNamePrice } from './CamperSubComponents/ItemNamePrice';
 import { RatingLocationComponent } from './CamperSubComponents/RatingLocation/RatingLocationComponent';

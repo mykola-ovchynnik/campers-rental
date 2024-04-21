@@ -8,15 +8,6 @@ export const Container = styled.div`
   padding-right: 64px;
 `;
 
-export const CamperDescription = styled.p`
-  display: inline-block;
-  color: var(--gray-color);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-top: 24px;
-`;
-
 export const Button = styled.button`
   margin-top: 24px;
   width: 166px;

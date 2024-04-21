@@ -20,11 +20,14 @@ export const App = () => {
 
           <Route path="/catalog" element={<CampersCatalog />}>
             <Route path="/catalog/:id" element={<CamperModal />}>
-              {/* <Route
+              <Route
                 path="/catalog/:id/features"
-                element={<CampersCatalog />}
+                // element={<AdditionalInfo />}
               />
-              <Route path="/catalog/:id/reviews" element={<CampersCatalog />} /> */}
+              <Route
+                path="/catalog/:id/reviews"
+                // element={<AdditionalInfo />}
+              />
             </Route>
           </Route>
 
