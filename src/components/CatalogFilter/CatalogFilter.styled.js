@@ -138,7 +138,6 @@ export const FilterItemLabel = styled.label`
 `;
 
 export const FilterIcon = styled.svg`
-  stroke: ${({ theme }) => theme.iconStroke};
   fill: ${({ theme }) => theme.iconFill};
   width: 32px;
   height: 32px;

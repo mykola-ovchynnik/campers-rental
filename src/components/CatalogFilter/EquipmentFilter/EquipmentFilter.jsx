@@ -8,6 +8,7 @@ import {
   ItemName,
   Legend,
 } from '../CatalogFilter.styled';
+import icons from '../../../icons/icons.svg';
 
 export const EquipmentFilter = ({
   legend,
@@ -21,22 +22,26 @@ export const EquipmentFilter = ({
       <Legend>{legend}</Legend>
 
       <FilterItemsContainer>
-        {itemsArr.map((item, index) => (
-          <FilterItemLabel htmlFor={item.name} key={index}>
-            <FilterCheckbox
-              {...(name === '' ? register(item.name) : register(name))}
-              type={type}
-              id={item.name}
-              name={name === '' ? item.name : name}
-              value={item.name}
-            />
+        {itemsArr.map((item, index) => {
+          return (
+            <FilterItemLabel htmlFor={item.name} key={index}>
+              <FilterCheckbox
+                {...(name === '' ? register(item.name) : register(name))}
+                type={type}
+                id={item.name}
+                name={name === '' ? item.name : name}
+                value={item.name}
+              />
 
-            <FilterItemWrapper>
-              <FilterIcon as={item.svg}></FilterIcon>
-              <ItemName>{item.name}</ItemName>
-            </FilterItemWrapper>
-          </FilterItemLabel>
-        ))}
+              <FilterItemWrapper>
+                <FilterIcon>
+                  <use xlinkHref={`${icons}#icon-${item.svg}`} />
+                </FilterIcon>
+                <ItemName>{item.name}</ItemName>
+              </FilterItemWrapper>
+            </FilterItemLabel>
+          );
+        })}
       </FilterItemsContainer>
     </Fieldset>
   );

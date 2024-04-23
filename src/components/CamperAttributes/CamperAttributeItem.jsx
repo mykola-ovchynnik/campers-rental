@@ -4,10 +4,14 @@ import {
   AttributeSvg,
 } from './CamperAttributes.styled';
 
+import icons from '../../icons/icons.svg';
+
 export const CamperAttributeItem = ({ svg, info }) => {
   return (
     <AttributeItem>
-      <AttributeSvg as={svg} />
+      <AttributeSvg>
+        <use xlinkHref={`${icons}#icon-${svg}`} />
+      </AttributeSvg>
       <AttributeInfo>{info}</AttributeInfo>
     </AttributeItem>
   );

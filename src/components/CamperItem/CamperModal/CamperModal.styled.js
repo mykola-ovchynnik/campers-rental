@@ -17,8 +17,9 @@ export const ModalBackdrop = styled.div`
 `;
 
 export const CamperWindow = styled.div`
+  overflow-y: auto;
   max-width: 982px;
-  min-height: 720px;
+  height: 80vh;
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -27,6 +28,19 @@ export const CamperWindow = styled.div`
 
   border-radius: 20px;
   background: ${({ theme }) => theme.body};
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #d9d9d9;
+    border-radius: 7px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 `;
 
 export const ImageGallery = styled.ul`

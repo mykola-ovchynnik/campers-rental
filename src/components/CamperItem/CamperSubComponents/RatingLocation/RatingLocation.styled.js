@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const RatingLocationWrapper = styled.div`
   display: flex;
   gap: 16px;
-  width: 267px;
 `;
 
 export const RatingsLocationSpan = styled.span`

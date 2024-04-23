@@ -10,9 +10,11 @@ import { CamperNamePrice } from './CamperSubComponents/ItemNamePrice';
 import { RatingLocationComponent } from './CamperSubComponents/RatingLocation/RatingLocationComponent';
 import defaultImage from '../../icons/van_rent.jpg';
 import { useLocation } from 'react-router-dom';
+import { getAttributes } from '../../utils/getAttributes';
 
 export const Camper = ({ camper }) => {
   const location = useLocation();
+  const attributes = getAttributes(camper);
 
   return (
     <CamperItem>
@@ -32,7 +34,7 @@ export const Camper = ({ camper }) => {
 
         <CamperDescription>{camper.description}</CamperDescription>
 
-        <CamperAttributes camper={camper} />
+        <CamperAttributes attributes={attributes} />
 
         <ShowMoreBtn to={`/catalog/${camper._id}`} state={{ from: location }}>
           Show more
