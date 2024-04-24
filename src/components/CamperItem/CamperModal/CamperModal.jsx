@@ -11,6 +11,7 @@ import { ModalHeadComponent } from './ModalSubComp/modalHead/ModalHeadComponent'
 import { ModalImageList } from './ModalSubComp/ModalImageList/ModalImageList';
 import { CamperDescription } from '../Camper.styled';
 import { ModalAdditionalInfo } from './ModalSubComp/ModalAdditionalInfo/ModalAdditionalInfo';
+import Loader from '../../GlobalLoader/Globalloader.styled';
 
 const CamperModal = () => {
   const { id } = useParams();
@@ -19,9 +20,7 @@ const CamperModal = () => {
   const camper = useSelector(singleCamperSelector);
   const location = useLocation();
 
-  const basePath = location.pathname.includes('favorites')
-    ? '/favorites'
-    : '/catalog';
+  const basePath = location.pathname.includes('favorites') ? '/favorites' : '/catalog';
 
   const closeModal = useCallback(() => {
     navigate(`${basePath}`);
@@ -46,13 +45,11 @@ const CamperModal = () => {
 
         <ModalImageList images={camper.gallery}></ModalImageList>
 
-        <CamperDescription className="modalDescription">
-          {camper.description}
-        </CamperDescription>
+        <CamperDescription className="modalDescription">{camper.description}</CamperDescription>
 
         <ModalAdditionalInfo camper={camper} />
 
-        <Suspense>
+        <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
       </CamperWindow>

@@ -1,17 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  campersSelector,
-  hasMoreSelector,
-} from '../../store/campersReducer/campersSlice';
+import { campersSelector, hasMoreSelector } from '../../store/campersReducer/campersSlice';
 import { Suspense, useRef } from 'react';
 import { getCampersThunk } from '../../store/thunk';
 import { Camper } from '../CamperItem/Camper';
-import {
-  CampersListWrapper,
-  CampersList,
-  LoadMoreButton,
-} from './CampersList.styled';
+import { CampersListWrapper, CampersList, LoadMoreButton } from './CampersList.styled';
 import { Outlet } from 'react-router-dom';
+import Loader from '../GlobalLoader/Globalloader.styled';
 
 export const CampersListComponent = () => {
   const pageRef = useRef(1);
@@ -42,7 +36,7 @@ export const CampersListComponent = () => {
           )}
         </>
       )}
-      <Suspense>
+      <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
     </CampersListWrapper>
