@@ -3,18 +3,21 @@ import { AdditionalInfoButton, ModalInfo } from '../../CamperModal.styled';
 
 export const ModalAdditionalInfo = ({ camper }) => {
   const location = useLocation();
+  const basePath = location.pathname.includes('favorites')
+    ? '/favorites'
+    : '/catalog';
 
   return (
     <ModalInfo>
       <AdditionalInfoButton
-        to={`/catalog/${camper._id}/features`}
+        to={`${basePath}/${camper._id}/features`}
         state={{ from: location }}
         activeclassname="active"
       >
         Features
       </AdditionalInfoButton>
       <AdditionalInfoButton
-        to={`/catalog/${camper._id}/reviews`}
+        to={`${basePath}/${camper._id}/reviews`}
         state={{ from: location }}
         activeclassname="active"
       >

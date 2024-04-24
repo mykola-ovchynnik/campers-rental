@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from '../Layout/Layout';
 import { HomePage } from '../../pages/HomePage';
-import { FavoritesPage } from '../../pages/FavoritesPage';
+import { FavoritesPage } from '../../pages/FavoritesPage/FavoritesPage';
 import { CampersCatalog } from '../../pages/CampersCatalog/CampersCataloge';
 import { ThemeProvider } from 'styled-components';
 import { useSelector } from 'react-redux';
@@ -29,7 +29,18 @@ export const App = () => {
             </Route>
           </Route>
 
-          <Route path="/favorites" element={<FavoritesPage />} />
+          <Route path="/favorites" element={<FavoritesPage />}>
+            <Route path="/favorites/:id" element={<CamperModal />}>
+              <Route
+                path="/favorites/:id/features"
+                element={<ModalFeatures />}
+              />
+              <Route
+                path="/favorites/:id/reviews"
+                // element={<AdditionalInfo />}
+              />
+            </Route>
+          </Route>
         </Route>
 
         <Route path="*" element={<Layout />} />

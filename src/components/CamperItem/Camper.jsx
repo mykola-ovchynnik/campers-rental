@@ -16,6 +16,10 @@ export const Camper = ({ camper }) => {
   const location = useLocation();
   const attributes = getAttributes(camper);
 
+  const basePath = location.pathname.includes('favorites')
+    ? '/favorites'
+    : '/catalog';
+
   return (
     <CamperItem>
       <ListItemImage
@@ -36,7 +40,10 @@ export const Camper = ({ camper }) => {
 
         <CamperAttributes attributes={attributes} />
 
-        <ShowMoreBtn to={`/catalog/${camper._id}`} state={{ from: location }}>
+        <ShowMoreBtn
+          to={`${basePath}/${camper._id}`}
+          state={{ from: location }}
+        >
           Show more
         </ShowMoreBtn>
       </ItemMainInfo>

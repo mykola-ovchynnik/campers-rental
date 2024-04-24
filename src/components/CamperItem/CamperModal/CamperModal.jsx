@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { CamperWindow, ModalBackdrop } from './CamperModal.styled';
 import { Suspense, useCallback, useEffect } from 'react';
 import { getCamperByIdThunk } from '../../../store/thunk';
-import { useParams, useNavigate, Outlet } from 'react-router-dom';
+import { useParams, useNavigate, Outlet, useLocation } from 'react-router-dom';
 import { singleCamperSelector } from '../../../store/campersReducer/campersSlice';
 import { useEscapeClose } from '../../../hooks/useEscapeClose';
 import { useBackdropClose } from '../../../hooks/useBackdropClose';
@@ -17,10 +17,15 @@ export const CamperModal = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const camper = useSelector(singleCamperSelector);
+  const location = useLocation();
+
+  const basePath = location.pathname.includes('favorites')
+    ? '/favorites'
+    : '/catalog';
 
   const closeModal = useCallback(() => {
-    navigate('/catalog');
-  }, [navigate]);
+    navigate(`${basePath}`);
+  }, [navigate, basePath]);
 
   const handleKeyDown = useEscapeClose(closeModal);
   const handleBackdropClick = useBackdropClose(closeModal);

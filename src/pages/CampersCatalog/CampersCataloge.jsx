@@ -9,7 +9,6 @@ import { CatalogPage, CatalogTheme } from './CampersCatalog.styled.js';
 
 export const CampersCatalog = () => {
   const campers = useSelector(campersSelector);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
