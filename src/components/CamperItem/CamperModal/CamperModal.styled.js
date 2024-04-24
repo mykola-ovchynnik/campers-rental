@@ -73,9 +73,9 @@ export const AdditionalInfoButton = styled(NavLink)`
     content: '';
     position: absolute;
     left: 0;
-    bottom: -24px;
+    bottom: -27px;
     width: 100%;
-    height: 3px;
+    height: 5px;
     background-color: ${({ theme }) => theme.activePage};
     z-index: 5;
   }
