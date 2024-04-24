@@ -1,9 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  AdditionalInfoButton,
-  CamperWindow,
-  ModalBackdrop,
-} from './CamperModal.styled';
+import { CamperWindow, ModalBackdrop } from './CamperModal.styled';
 import { Suspense, useCallback, useEffect } from 'react';
 import { getCamperByIdThunk } from '../../../store/thunk';
 import { useParams, useNavigate, Outlet } from 'react-router-dom';

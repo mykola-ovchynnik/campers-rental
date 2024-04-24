@@ -6,14 +6,15 @@ import {
 } from './Header.styled';
 import { Container } from '../../styles/StyledComponents';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
-import { NavLink } from 'react-router-dom';
 
 export const Header = () => {
   return (
     <HeaderStyled>
       <Container>
         <HeaderWrapper>
-          <NavLinkStyled to="/">Campers rental</NavLinkStyled>
+          <NavLinkStyled to="/" className={'logo'}>
+            Campers rental
+          </NavLinkStyled>
 
           <NavBar>
             <ThemeToggle />

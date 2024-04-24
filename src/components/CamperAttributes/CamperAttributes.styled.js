@@ -7,7 +7,6 @@ export const AttributesList = styled.ul`
   flex-wrap: wrap;
   row-gap: 8px;
   column-gap: 8px;
-  margin-top: 24px;
 `;
 
 export const AttributeItem = styled.li`
@@ -32,6 +31,7 @@ export const AttributeSvg = styled.svg`
   justify-content: center;
   align-items: center;
   margin-right: 8px;
+  fill: ${({ theme }) => theme.iconFill};
 `;
 
 export const AttributeInfo = styled.p`

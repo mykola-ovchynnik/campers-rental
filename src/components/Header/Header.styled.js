@@ -30,14 +30,18 @@ export const NavLinkStyled = styled(NavLink)`
     content: '';
     position: absolute;
     left: 0;
-    bottom: -3px;
+    bottom: -24px;
     width: 100%;
     height: 3px;
-    background-color: ${({ theme }) => theme.border};
+    background-color: ${({ theme }) => theme.activePage};
     z-index: 5;
   }
 
   &:hover {
     cursor: pointer;
+  }
+
+  &.logo::after {
+    content: none;
   }
 `;

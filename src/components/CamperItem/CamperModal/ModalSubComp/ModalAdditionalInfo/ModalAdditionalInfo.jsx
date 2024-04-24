@@ -1,9 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import {
-  AddInfoButtonsWrapper,
-  AdditionalInfoButton,
-  ModalInfo,
-} from '../../CamperModal.styled';
+import { AdditionalInfoButton, ModalInfo } from '../../CamperModal.styled';
 
 export const ModalAdditionalInfo = ({ camper }) => {
   const location = useLocation();

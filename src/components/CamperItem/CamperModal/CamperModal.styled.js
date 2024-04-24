@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const ModalBackdrop = styled.div`
@@ -24,10 +24,17 @@ export const CamperWindow = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-  gap: 24px;
 
   border-radius: 20px;
   background: ${({ theme }) => theme.body};
+
+  & > *:not(:last-child) {
+    margin-bottom: 24px;
+  }
+
+  & > *:nth-last-child(2) {
+    margin-bottom: 44px;
+  }
 
   &::-webkit-scrollbar {
     width: 8px;
@@ -55,7 +62,7 @@ export const ModalInfo = styled.div`
   padding-bottom: 24px;
 `;
 
-export const AdditionalInfoButton = styled(Link)`
+export const AdditionalInfoButton = styled(NavLink)`
   color: ${({ theme }) => theme.text};
   font-size: 20px;
   font-weight: 600;
@@ -66,10 +73,10 @@ export const AdditionalInfoButton = styled(Link)`
     content: '';
     position: absolute;
     left: 0;
-    bottom: -3px;
+    bottom: -24px;
     width: 100%;
     height: 3px;
-    background-color: ${({ theme }) => theme.border};
+    background-color: ${({ theme }) => theme.activePage};
     z-index: 5;
   }
 `;

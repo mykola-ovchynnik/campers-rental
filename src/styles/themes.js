@@ -10,11 +10,12 @@ export const lightTheme = {
   filterChecked: '#E44848',
 
   button: '#E44848',
+  activePage: '#E44848',
   border: 'rgba(16, 24, 40, 0.2)',
 
   iconBackground: '#F2F4F7',
   star: '#FFC531',
-  iconStroke: '#101828',
+  iconFill: '#101828',
   favoritesIconFill: '#E44848',
 
   modalBackdrop: 'rgba(17, 18, 19, 0.4)',
@@ -32,11 +33,12 @@ export const darkTheme = {
   filterChecked: '#E44848',
 
   button: '#A33D3D',
+  activePage: '#E44848',
   border: 'rgb(48, 54, 61)',
 
   iconBackground: '#F2F4F7',
   star: '#CCAA22',
-  iconStroke: '#F7F7F7',
+  iconFill: '#F7F7F7',
   favoritesIconFill: '#E44848',
 
   modalBackdrop: 'rgba(17, 18, 19, 0.4)',

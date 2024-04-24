@@ -15,6 +15,16 @@ export const ModalFeatures = () => {
   const camper = useSelector(singleCamperSelector);
   const attributes = getAttributes(camper, true);
 
+  // Vehicle details to display
+  const vehicleDetails = [
+    { name: 'Form', value: camper.form },
+    { name: 'Length', value: camper.length },
+    { name: 'Width', value: camper.width },
+    { name: 'Height', value: camper.height },
+    { name: 'Tank', value: camper.tank },
+    { name: 'Consumption', value: camper.consumption },
+  ];
+
   return (
     <>
       <FeaturesWrapper>
@@ -22,30 +32,12 @@ export const ModalFeatures = () => {
         <ModalDetails>
           <ModalDetailsTitle>Vehicle details</ModalDetailsTitle>
           <ModalDetailsList>
-            <ModalDetailsItem>
-              <ModalDetailsText>Form</ModalDetailsText>
-              <ModalDetailsText>{camper.form}</ModalDetailsText>
-            </ModalDetailsItem>
-            <ModalDetailsItem>
-              <ModalDetailsText>Length</ModalDetailsText>
-              <ModalDetailsText>{camper.length}</ModalDetailsText>
-            </ModalDetailsItem>
-            <ModalDetailsItem>
-              <ModalDetailsText>Width</ModalDetailsText>
-              <ModalDetailsText>{camper.width}</ModalDetailsText>
-            </ModalDetailsItem>
-            <ModalDetailsItem>
-              <ModalDetailsText>Height</ModalDetailsText>
-              <ModalDetailsText>{camper.height}</ModalDetailsText>
-            </ModalDetailsItem>
-            <ModalDetailsItem>
-              <ModalDetailsText>Tank</ModalDetailsText>
-              <ModalDetailsText>{camper.tank}</ModalDetailsText>
-            </ModalDetailsItem>
-            <ModalDetailsItem>
-              <ModalDetailsText>Consumption</ModalDetailsText>
-              <ModalDetailsText>{camper.consumption}</ModalDetailsText>
-            </ModalDetailsItem>
+            {vehicleDetails.map((detail, index) => (
+              <ModalDetailsItem key={index}>
+                <ModalDetailsText>{detail.name}</ModalDetailsText>
+                <ModalDetailsText>{detail.value}</ModalDetailsText>
+              </ModalDetailsItem>
+            ))}
           </ModalDetailsList>
         </ModalDetails>
       </FeaturesWrapper>

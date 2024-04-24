@@ -3,7 +3,7 @@ import { ReactComponent as HeartSVG } from '../../../../icons/heart.svg';
 
 export const HeartIcon = styled(HeartSVG)`
   fill: ${props => (props.isfavorite ? props.theme.favoritesIconFill : 'none')};
-  stroke: ${props => (props.isfavorite ? 'none' : props.theme.iconStroke)};
+  stroke: ${props => (props.isfavorite ? 'none' : props.theme.iconFill)};
   transition: transform 0.1s ease-in-out;
   cursor: pointer;
 `;
