@@ -18,7 +18,7 @@ export const ModalBackdrop = styled.div`
 
 export const CamperWindow = styled.div`
   overflow-y: auto;
-  max-width: 982px;
+  width: 982px;
   height: 80vh;
   padding: 40px;
   display: flex;

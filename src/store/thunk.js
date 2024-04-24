@@ -13,7 +13,7 @@ export const getCampersThunk = createAsyncThunk(
 
       return { campers, hasMore: true };
     } catch (error) {
-      rejectWithValue(error);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -22,9 +22,17 @@ export const getCamperByIdThunk = createAsyncThunk(
   'campers/getCamperById',
   async (id, { rejectWithValue }) => {
     try {
-      return await getCamperById(id);
+      const camper = await getCamperById(id);
+
+      if (!camper || Object.keys(camper).length === 0) {
+        throw new Error(
+          `Camper with id ${id} not found. :( Please, try again.`
+        );
+      }
+
+      return camper;
     } catch (error) {
-      rejectWithValue(error);
+      return rejectWithValue(error.message);
     }
   }
 );

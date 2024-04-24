@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
-export const FavoritesPage = () => {
+const FavoritesPage = () => {
   const campers = useSelector(selectorFavorites);
 
   return (
@@ -29,3 +29,5 @@ export const FavoritesPage = () => {
     </Container>
   );
 };
+
+export default FavoritesPage;

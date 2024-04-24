@@ -1,14 +1,17 @@
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from '../Layout/Layout';
-import { HomePage } from '../../pages/HomePage';
-import { FavoritesPage } from '../../pages/FavoritesPage/FavoritesPage';
-import { CampersCatalog } from '../../pages/CampersCatalog/CampersCataloge';
 import { ThemeProvider } from 'styled-components';
 import { useSelector } from 'react-redux';
 import { darkTheme, lightTheme } from '../../styles/themes';
 import { themeSelector } from '../../store/themeReducer/themeSlice';
-import { CamperModal } from '../CamperItem/CamperModal/CamperModal';
-import { ModalFeatures } from '../CamperItem/CamperModal/ModalFeatures/ModalFeatures';
+import { GlobalLoader } from '../GlobalLoader/GlobalLoader';
+import { lazy } from 'react';
+
+const CampersCatalog = lazy(() => import('../../pages/CampersCatalog/CampersCataloge'));
+const HomePage = lazy(() => import('../../pages/HomePage'));
+const FavoritesPage = lazy(() => import('../../pages/FavoritesPage/FavoritesPage'));
+const CamperModal = lazy(() => import('../CamperItem/CamperModal/CamperModal'));
+const ModalFeatures = lazy(() => import('../CamperItem/CamperModal/ModalFeatures/ModalFeatures'));
 
 export const App = () => {
   const darkMode = useSelector(themeSelector);
@@ -31,10 +34,7 @@ export const App = () => {
 
           <Route path="/favorites" element={<FavoritesPage />}>
             <Route path="/favorites/:id" element={<CamperModal />}>
-              <Route
-                path="/favorites/:id/features"
-                element={<ModalFeatures />}
-              />
+              <Route path="/favorites/:id/features" element={<ModalFeatures />} />
               <Route
                 path="/favorites/:id/reviews"
                 // element={<AdditionalInfo />}
@@ -45,6 +45,8 @@ export const App = () => {
 
         <Route path="*" element={<Layout />} />
       </Routes>
+
+      <GlobalLoader />
     </ThemeProvider>
   );
 };

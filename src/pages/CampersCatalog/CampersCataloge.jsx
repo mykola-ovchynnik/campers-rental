@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { campersSelector } from '../../store/campersReducer/campersSlice';
 import { CatalogPage, CatalogTheme } from './CampersCatalog.styled.js';
 
-export const CampersCatalog = () => {
+const CampersCatalog = () => {
   const campers = useSelector(campersSelector);
   const dispatch = useDispatch();
 
@@ -27,3 +27,5 @@ export const CampersCatalog = () => {
     </CatalogTheme>
   );
 };
+
+export default CampersCatalog;

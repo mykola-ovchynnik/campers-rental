@@ -11,7 +11,7 @@ import {
   ModalDetailsTitle,
 } from './ModalFeatures.styled';
 
-export const ModalFeatures = () => {
+const ModalFeatures = () => {
   const camper = useSelector(singleCamperSelector);
   const attributes = getAttributes(camper, true);
 
@@ -44,3 +44,5 @@ export const ModalFeatures = () => {
     </>
   );
 };
+
+export default ModalFeatures;

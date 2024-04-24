@@ -12,7 +12,7 @@ import { ModalImageList } from './ModalSubComp/ModalImageList/ModalImageList';
 import { CamperDescription } from '../Camper.styled';
 import { ModalAdditionalInfo } from './ModalSubComp/ModalAdditionalInfo/ModalAdditionalInfo';
 
-export const CamperModal = () => {
+const CamperModal = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -59,3 +59,5 @@ export const CamperModal = () => {
     </ModalBackdrop>
   );
 };
+
+export default CamperModal;
