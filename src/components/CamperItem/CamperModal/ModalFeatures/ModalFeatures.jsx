@@ -10,6 +10,8 @@ import {
   ModalDetailsText,
   ModalDetailsTitle,
 } from './ModalFeatures.styled';
+import BookingForm from '../../../Forms/BookingForm';
+import { AdditionalInfoWrapper } from '../CamperModal.styled';
 
 const ModalFeatures = () => {
   const camper = useSelector(singleCamperSelector);
@@ -26,7 +28,7 @@ const ModalFeatures = () => {
   ];
 
   return (
-    <>
+    <AdditionalInfoWrapper>
       <FeaturesWrapper>
         <CamperAttributes attributes={attributes} />
         <ModalDetails>
@@ -41,7 +43,8 @@ const ModalFeatures = () => {
           </ModalDetailsList>
         </ModalDetails>
       </FeaturesWrapper>
-    </>
+      <BookingForm />
+    </AdditionalInfoWrapper>
   );
 };
 

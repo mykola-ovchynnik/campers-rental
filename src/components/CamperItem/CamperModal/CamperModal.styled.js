@@ -80,3 +80,8 @@ export const AdditionalInfoButton = styled(NavLink)`
     z-index: 5;
   }
 `;
+
+export const AdditionalInfoWrapper = styled.div`
+  display: flex;
+  gap: 24px;
+`;
