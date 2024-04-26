@@ -17,7 +17,6 @@ const ModalFeatures = () => {
   const camper = useSelector(singleCamperSelector);
   const attributes = getAttributes(camper, true);
 
-  // Vehicle details to display
   const vehicleDetails = [
     { name: 'Form', value: camper.form },
     { name: 'Length', value: camper.length },

@@ -6,6 +6,7 @@ import { darkTheme, lightTheme } from '../../styles/themes';
 import { themeSelector } from '../../store/themeReducer/themeSlice';
 import { GlobalLoader } from '../GlobalLoader/GlobalLoader';
 import { lazy } from 'react';
+import { ModalReviews } from '../CamperItem/CamperModal/ModalReviews/ModalReviews';
 
 const CampersCatalog = lazy(() => import('../../pages/CampersCatalog/CampersCataloge'));
 const HomePage = lazy(() => import('../../pages/HomePage'));
@@ -25,20 +26,14 @@ export const App = () => {
           <Route path="/catalog" element={<CampersCatalog />}>
             <Route path="/catalog/:id" element={<CamperModal />}>
               <Route path="/catalog/:id/features" element={<ModalFeatures />} />
-              <Route
-                path="/catalog/:id/reviews"
-                // element={<AdditionalInfo />}
-              />
+              <Route path="/catalog/:id/reviews" element={<ModalReviews />} />
             </Route>
           </Route>
 
           <Route path="/favorites" element={<FavoritesPage />}>
             <Route path="/favorites/:id" element={<CamperModal />}>
               <Route path="/favorites/:id/features" element={<ModalFeatures />} />
-              <Route
-                path="/favorites/:id/reviews"
-                // element={<AdditionalInfo />}
-              />
+              <Route path="/favorites/:id/reviews" element={<ModalReviews />} />
             </Route>
           </Route>
         </Route>

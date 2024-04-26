@@ -9,7 +9,6 @@ export const Container = styled.div`
 `;
 
 export const Button = styled.button`
-  margin-top: 24px;
   width: 166px;
   height: 56px;
   display: flex;
@@ -32,5 +31,9 @@ export const Button = styled.button`
 
   &:active {
     transform: scale(0.9);
+  }
+
+  &:disabled {
+    background: gray;
   }
 `;

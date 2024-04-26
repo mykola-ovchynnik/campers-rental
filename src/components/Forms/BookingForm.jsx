@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import icons from '../../icons/icons.svg';
@@ -6,54 +5,90 @@ import {
   BookForm,
   BookFormText,
   BookFormTitle,
+  CalendarSvg,
   InputField,
   Label,
   TextArea,
 } from './BookingForm.styled';
 import { Button } from '../../styles/StyledComponents';
+import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 
 const BookingForm = () => {
-  const [startDate, setStartDate] = useState(new Date());
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [comment, setComment] = useState('');
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    watch,
+    reset,
+    formState: { isValid, isDirty, dirtyFields, errors },
+  } = useForm({
+    defaultValues: { name: '', email: '', date: '', comment: '' },
+  });
 
-  const handleSubmit = event => {
-    event.preventDefault();
-    // Handle form submission here
+  const onSubmit = data => {
+    toast.success(`${data.name}, Your booking has been successfully sent!`);
+    reset();
   };
 
   return (
-    <BookForm onSubmit={handleSubmit}>
-      <BookFormTitle>Book your campervan now</BookFormTitle>
+    <BookForm onSubmit={handleSubmit(onSubmit)}>
+      <BookFormTitle>Book your camper van now</BookFormTitle>
       <BookFormText>Stay connected! We are always ready to help you.</BookFormText>
 
       <Label htmlFor="name">Name</Label>
-      <InputField type="text" name="name" value={name} onChange={e => setName(e.target.value)} />
+      <InputField
+        type="text"
+        id="name"
+        placeholder="Name"
+        {...register('name', {
+          required: 'Name is required',
+          pattern: {
+            value: /^[A-Za-zА-Яа-я\s]+$/i,
+            message: 'Invalid name. Only letters are allowed.',
+          },
+        })}
+        style={{
+          border: dirtyFields.name && errors.name ? `2px solid #E44848` : 'none',
+        }}
+      />
 
       <Label htmlFor="email">Email</Label>
       <InputField
         type="email"
-        name="email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
+        id="email"
+        placeholder="Email"
+        {...register('email', {
+          required: 'Email is required',
+          pattern: { value: /^\S+@\S+$/i, message: 'Invalid email address' },
+        })}
+        style={{
+          border: dirtyFields.email && errors.email ? `2px solid #E44848` : 'none',
+        }}
       />
 
       <Label htmlFor="date">Booking Date</Label>
       <DatePicker
+        required
         showIcon
-        name="date"
-        selected={startDate}
-        onChange={date => setStartDate(date)}
+        toggleCalendarOnIconClick
+        popperPlacement="top-end"
+        id="date"
+        selected={watch('date')}
+        minDate={new Date()}
+        placeholderText="Booking date"
+        onChange={date => setValue('date', date)}
         customInput={<InputField />}
         icon={
-          <svg>
+          <CalendarSvg>
             <use xlinkHref={`${icons}#icon-calendar`} />
-          </svg>
+          </CalendarSvg>
         }
       />
+
       <Label htmlFor="comment">Comment</Label>
-      <TextArea name="comment" value={comment} onChange={e => setComment(e.target.value)} />
+      <TextArea id="comment" placeholder="Comment" {...register('comment')} />
+
       <Button type="submit" onSubmit={handleSubmit}>
         Send
       </Button>

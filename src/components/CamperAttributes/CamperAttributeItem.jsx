@@ -1,8 +1,4 @@
-import {
-  AttributeInfo,
-  AttributeItem,
-  AttributeSvg,
-} from './CamperAttributes.styled';
+import { AttributeInfo, AttributeItem, AttributeSvg } from './CamperAttributes.styled';
 
 import icons from '../../icons/icons.svg';
 
