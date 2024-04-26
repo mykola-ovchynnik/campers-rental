@@ -23,7 +23,7 @@ export const getCamperById = async id => {
 export const getFilterdCampers = async filter => {
   const { location, vehicleType, Automatic } = filter;
   let params = {};
-  console.log(filter);
+
   if (location) {
     params.location = location;
   }
