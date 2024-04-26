@@ -10,13 +10,7 @@ import {
 } from '../CatalogFilter.styled';
 import icons from '../../../icons/icons.svg';
 
-export const EquipmentFilter = ({
-  legend,
-  itemsArr,
-  register,
-  type,
-  name = '',
-}) => {
+export const EquipmentFilter = ({ legend, itemsArr, register, type, name = '' }) => {
   return (
     <Fieldset>
       <Legend>{legend}</Legend>
@@ -30,7 +24,7 @@ export const EquipmentFilter = ({
                 type={type}
                 id={item.name}
                 name={name === '' ? item.name : name}
-                value={item.name}
+                value={item.svg}
               />
 
               <FilterItemWrapper>

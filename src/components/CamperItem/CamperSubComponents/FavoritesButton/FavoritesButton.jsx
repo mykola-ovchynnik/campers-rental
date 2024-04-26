@@ -22,7 +22,7 @@ export const FavoritesButton = ({ camper }) => {
 
   return (
     <HeartButton onClick={handleFavoriteClick}>
-      <HeartIcon isfavorite={isFavorite ? 'true' : undefined}>
+      <HeartIcon $isfavorite={isFavorite ? 'true' : undefined}>
         <use xlinkHref={`${icons}#icon-heart`} />
       </HeartIcon>
     </HeartButton>

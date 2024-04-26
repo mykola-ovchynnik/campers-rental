@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { getCampers, getCamperById } from '../api/api';
+import { getCampers, getCamperById, getFilterdCampers } from '../api/api';
 
 export const getCampersThunk = createAsyncThunk(
   'campers/getCampers',
@@ -25,12 +25,23 @@ export const getCamperByIdThunk = createAsyncThunk(
       const camper = await getCamperById(id);
 
       if (!camper || Object.keys(camper).length === 0) {
-        throw new Error(
-          `Camper with id ${id} not found. :( Please, try again.`
-        );
+        throw new Error(`Camper with id ${id} not found. :( Please, try again.`);
       }
 
       return camper;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const getFilteredCampersThunk = createAsyncThunk(
+  'filteredCampers/getCampers',
+  async (filter, { rejectWithValue }) => {
+    try {
+      const campers = await getFilterdCampers(filter);
+
+      return { campers, hasMore: false };
     } catch (error) {
       return rejectWithValue(error.message);
     }

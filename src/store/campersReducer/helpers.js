@@ -6,3 +6,8 @@ export const handleFulfilledCampers = (state, { payload }) => {
 export const handleFulfilledSingleCamper = (state, { payload }) => {
   state.singleCamper = payload;
 };
+
+export const handleFulfilledFilteredCampers = (state, { payload }) => {
+  state.campers = payload.campers;
+  state.hasMore = payload.hasMore;
+};

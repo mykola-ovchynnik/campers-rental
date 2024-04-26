@@ -21,7 +21,6 @@ export const LocationFilter = ({ register, setValue }) => {
         id="location"
         name="location"
         placeholder="City"
-        pattern="/^[A-Za-z,\s]*$/"
         onChange={e => {
           validateInput(e, setValue, setIsValid);
         }}

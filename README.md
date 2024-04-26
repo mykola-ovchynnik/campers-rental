@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Camper Rental
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a web application for renting campers.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Browse a catalog of campers
+- Filter the catalog by various attributes (in development, currently available only filter for
+  location and vehicle type)
+- View detailed information about each camper
+- Add campers to a list of favorites
+- Read reviews for each camper
+- Book a camper for a specific date
 
-### `npm start`
+## Technical Task
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Implement a camper rental announcement card according to the layout.
+- On the first page of the catalog, 4 announcements should be rendered, and the rest - by clicking
+  on the Load more button.
+- When you click on the "heart" button on the announcement card, it should be added to the list of
+  favorites, and the color of the button should change.
+- When the page is refreshed, the final result of the user's actions should be fixed. That is, if
+  you add an announcement to your favorites and refresh the page - the button still remains in the
+  state of "favorite announcement" with the appropriate color.
+- If you click on the "heart" button again, the announcement should be removed from the list of
+  favorites, and the color of the button should change to the initial state.
+- When you click on the Show more button, a modal window with detailed information about the camper
+  should open.
+- The modal window should close by clicking on the "cross" button, by clicking on the backdrop, and
+  by pressing the Esc key.
+- The modal window contains information about the features of the camper and reviews about it. The
+  rendering of information depends on the state of the active tab.
+- The modal window also contains a form for booking a camper, which consists of the fields name,
+  email, booking date, and comment. The fields name, email, booking date are mandatory to fill in
+  and must pass a check for the validity of the entered values. (In case of invalid data, the form
+  is not sent, in case of a valid form - the page is updated).
+- The rental price must be written with one value (for example, 8000). In the UI - output through a
+  comma (8000,00).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+To install the project, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository: `git clone https://github.com/mykola-ovchynnik/campers-rental.git`
+2. Navigate to the project directory: `cd campers-rental`
+3. Install the dependencies: `npm install`
+4. Start the development server: `npm start`
 
-### `npm run build`
+## Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To use the application, open your web browser and navigate to `http://localhost:3000`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contributing
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+If you want to contribute to this project, please submit a pull request.
 
-### `npm run eject`
+## License
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License.

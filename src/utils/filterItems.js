@@ -7,7 +7,7 @@ export const equipmentItems = [
 ];
 
 export const typeItems = [
-  { name: 'Van', svg: 'van' },
+  { name: 'Van', svg: 'panelTruck' },
   { name: 'Fully Integrated', svg: 'fullyIntegrated' },
   { name: 'Alcove', svg: 'alcove' },
 ];

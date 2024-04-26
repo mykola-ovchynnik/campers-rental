@@ -1,6 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getCamperByIdThunk, getCampersThunk } from '../thunk';
-import { handleFulfilledCampers, handleFulfilledSingleCamper } from './helpers';
+import { getCamperByIdThunk, getCampersThunk, getFilteredCampersThunk } from '../thunk';
+import {
+  handleFulfilledCampers,
+  handleFulfilledFilteredCampers,
+  handleFulfilledSingleCamper,
+} from './helpers';
 
 const initialState = {
   campers: [],
@@ -19,7 +23,8 @@ export const campersSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(getCampersThunk.fulfilled, handleFulfilledCampers)
-      .addCase(getCamperByIdThunk.fulfilled, handleFulfilledSingleCamper);
+      .addCase(getCamperByIdThunk.fulfilled, handleFulfilledSingleCamper)
+      .addCase(getFilteredCampersThunk.fulfilled, handleFulfilledFilteredCampers);
   },
 });
 

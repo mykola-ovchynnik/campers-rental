@@ -4,15 +4,20 @@ import { FilterForm, FilterText } from './CatalogFilter.styled';
 import { EquipmentFilter } from './EquipmentFilter/EquipmentFilter';
 import { LocationFilter } from './LocationFilter/LocationFilter';
 import { equipmentItems, typeItems } from '../../utils/filterItems';
+import toast from 'react-hot-toast';
+import { useDispatch } from 'react-redux';
+import { getFilteredCampersThunk } from '../../store/thunk';
 
 export const CatalogFilter = () => {
   const { register, handleSubmit, setValue } = useForm();
+  const dispatch = useDispatch();
 
   const onSubmit = filterData => {
     if (Object.values(filterData).every(value => !value)) {
-      alert('Form is empty');
+      toast.error('Please select at least one filter for search');
     }
-    console.log(filterData);
+
+    dispatch(getFilteredCampersThunk(filterData));
   };
 
   return (
