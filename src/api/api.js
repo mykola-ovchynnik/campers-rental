@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { fi } from 'date-fns/locale';
 
 axios.defaults.headers.common = { 'content-type': 'application/json' };
 axios.defaults.baseURL = 'https://65ef7128ead08fa78a5074be.mockapi.io';
