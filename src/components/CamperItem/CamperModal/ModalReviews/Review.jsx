@@ -12,7 +12,7 @@ import icons from '../../../../icons/icons.svg';
 export const Review = ({ review }) => {
   return (
     <ReviewItem>
-      <ReviewerImage />
+      <ReviewerImage>{review.reviewer_name[0]}</ReviewerImage>
 
       <NameRatingWrapper>
         <ReviewerName>{review.reviewer_name}</ReviewerName>

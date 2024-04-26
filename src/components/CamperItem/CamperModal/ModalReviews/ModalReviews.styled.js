@@ -39,11 +39,21 @@ export const StarSvg = styled.svg`
   height: 16px;
 `;
 
-export const ReviewerImage = styled.img`
+export const ReviewerImage = styled.div`
+  overflow: hidden;
+  position: absolute;
+
   width: 60px;
   height: 60px;
   border-radius: 60px;
   background: #f2f4f7;
-  overflow: hidden;
-  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #e44848;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
 `;
