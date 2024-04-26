@@ -21,7 +21,7 @@ const BookingForm = () => {
     setValue,
     watch,
     reset,
-    formState: { isValid, isDirty, dirtyFields, errors },
+    formState: { dirtyFields, errors },
   } = useForm({
     defaultValues: { name: '', email: '', date: '', comment: '' },
   });
