@@ -54,10 +54,6 @@ export const FilterTextInput = styled.input`
   &:focus {
     outline: none;
   }
-
-  &:focus + ${LocationSvg}, &:not(:placeholder-shown) + ${LocationSvg} {
-    stroke: #101828;
-  }
 `;
 
 export const TextInputLabel = styled.label`

@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import icons from '../../../icons/icons.svg';
 
 export const ModalBackdrop = styled.div`
   width: 100vw;
@@ -84,4 +85,28 @@ export const AdditionalInfoButton = styled(NavLink)`
 export const AdditionalInfoWrapper = styled.div`
   display: flex;
   gap: 24px;
+`;
+
+export const CloseBtn = styled.button`
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  background-color: transparent;
+  border: none;
+  transition: transform 0.1s ease-in-out;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(1);
+  }
+`;
+
+export const CloseSvg = styled.svg`
+  width: 32px;
+  height: 32px;
 `;

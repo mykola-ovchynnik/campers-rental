@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { CamperWindow, ModalBackdrop } from './CamperModal.styled';
+import { CamperWindow, CloseBtn, CloseSvg, ModalBackdrop } from './CamperModal.styled';
 import { Suspense, useCallback, useEffect } from 'react';
 import { getCamperByIdThunk } from '../../../store/thunk';
 import { useParams, useNavigate, Outlet, useLocation } from 'react-router-dom';
@@ -12,6 +12,7 @@ import { ModalImageList } from './ModalSubComp/ModalImageList/ModalImageList';
 import { CamperDescription } from '../Camper.styled';
 import { ModalAdditionalInfo } from './ModalSubComp/ModalAdditionalInfo/ModalAdditionalInfo';
 import Loader from '../../GlobalLoader/Globalloader.styled';
+import icons from '../../../icons/icons.svg';
 
 const CamperModal = () => {
   const { id } = useParams();
@@ -48,6 +49,12 @@ const CamperModal = () => {
         <CamperDescription className="modalDescription">{camper.description}</CamperDescription>
 
         <ModalAdditionalInfo camper={camper} />
+
+        <CloseBtn onClick={closeModal}>
+          <CloseSvg>
+            <use xlinkHref={`${icons}#icon-cross`} />
+          </CloseSvg>
+        </CloseBtn>
 
         <Suspense fallback={<Loader />}>
           <Outlet />

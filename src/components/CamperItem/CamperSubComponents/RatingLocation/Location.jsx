@@ -1,14 +1,12 @@
-import { ReactComponent as LocationSVG } from '../../../../icons/location.svg';
-import {
-  RatingLocation,
-  RatingsLocationSpan,
-  StarLocationIcon,
-} from './RatingLocation.styled';
+import { RatingLocation, RatingsLocationSpan, StarLocationIcon } from './RatingLocation.styled';
+import icons from '../../../../icons/icons.svg';
 
 export const Location = ({ location }) => {
   return (
     <RatingsLocationSpan>
-      <StarLocationIcon as={LocationSVG} />
+      <StarLocationIcon>
+        <use xlinkHref={`${icons}#icon-location`} />
+      </StarLocationIcon>
       <RatingLocation>{`${location}`}</RatingLocation>
     </RatingsLocationSpan>
   );

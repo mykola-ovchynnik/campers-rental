@@ -5,6 +5,7 @@ import {
   selectorFavorites,
 } from '../../../../store/favoritesReducer/favoritesSlice';
 import { HeartButton, HeartIcon } from './FavoritesButton.styled';
+import icons from '../../../../icons/icons.svg';
 
 export const FavoritesButton = ({ camper }) => {
   const favorites = useSelector(selectorFavorites);
@@ -18,9 +19,12 @@ export const FavoritesButton = ({ camper }) => {
       dispatch(addFavorite(camper));
     }
   };
+
   return (
     <HeartButton onClick={handleFavoriteClick}>
-      <HeartIcon isfavorite={isFavorite ? 'true' : undefined} />
+      <HeartIcon isfavorite={isFavorite ? 'true' : undefined}>
+        <use xlinkHref={`${icons}#icon-heart`} />
+      </HeartIcon>
     </HeartButton>
   );
 };

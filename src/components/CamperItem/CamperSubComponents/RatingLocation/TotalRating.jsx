@@ -1,10 +1,7 @@
 import { ReactComponent as StarSVG } from '../../../../icons/star.svg';
 import { ratingCalculator } from '../../../../utils/utils';
-import {
-  RatingLocation,
-  RatingsLocationSpan,
-  StarLocationIcon,
-} from './RatingLocation.styled';
+import { RatingLocation, RatingsLocationSpan, StarLocationIcon } from './RatingLocation.styled';
+import icons from '../../../../icons/icons.svg';
 
 export const TotalRating = ({ reviews }) => {
   const isArray = Array.isArray(reviews);
@@ -13,7 +10,10 @@ export const TotalRating = ({ reviews }) => {
 
   return (
     <RatingsLocationSpan>
-      <StarLocationIcon as={StarSVG} />
+      <StarLocationIcon fill={'#ffc531'} stroke={'#ffc531'}>
+        <use xlinkHref={`${icons}#icon-star`} />
+      </StarLocationIcon>
+
       <RatingLocation className="rating">
         {rating >= 0 ? `${rating} (${reviewsCount} Reviews)` : 'No reviews'}
       </RatingLocation>

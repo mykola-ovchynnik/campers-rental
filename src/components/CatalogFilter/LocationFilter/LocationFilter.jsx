@@ -4,9 +4,9 @@ import {
   LocationSvg,
   TextInputLabel,
 } from '../CatalogFilter.styled';
-import { ReactComponent as LocationSVG } from '../../../icons/location.svg';
 import { validateInput } from '../../../utils/utils';
 import { useState } from 'react';
+import icons from '../../../icons/icons.svg';
 
 export const LocationFilter = ({ register, setValue }) => {
   const [isValid, setIsValid] = useState(true);
@@ -30,7 +30,9 @@ export const LocationFilter = ({ register, setValue }) => {
         }}
       ></FilterTextInput>
 
-      <LocationSvg as={LocationSVG} />
+      <LocationSvg>
+        <use xlinkHref={`${icons}#icon-location`} />
+      </LocationSvg>
     </FilterLocationWrapper>
   );
 };

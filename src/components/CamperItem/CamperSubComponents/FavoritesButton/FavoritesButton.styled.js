@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import { ReactComponent as HeartSVG } from '../../../../icons/heart.svg';
 
-export const HeartIcon = styled(HeartSVG)`
+export const HeartIcon = styled.svg`
+  width: 24px;
+  height: 24px;
   fill: ${props => (props.isfavorite ? '#E44848' : 'none')};
   stroke: ${props => (props.isfavorite ? 'none' : '#101828')};
   transition: transform 0.1s ease-in-out;
@@ -11,8 +12,6 @@ export const HeartIcon = styled(HeartSVG)`
 export const HeartButton = styled.button`
   position: absolute;
   right: 0;
-  width: 24px;
-  height: 24px;
   flex-shrink: 0;
   padding: 0;
   border: 0;
