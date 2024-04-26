@@ -17,15 +17,15 @@ export const Button = styled.button`
   align-items: center;
   border: none;
   border-radius: 200px;
-  background: var(--red-color);
-  color: var(--white-color);
+  background: #e44848;
+  color: #fff;
   font-weight: 500;
   letter-spacing: -0.08px;
   line-height: 24px;
   transition: transform 0.1s ease-in-out;
 
   &:hover {
-    background-color: var(--red-color-hover);
+    background-color: #d84343;
     cursor: pointer;
   }
 

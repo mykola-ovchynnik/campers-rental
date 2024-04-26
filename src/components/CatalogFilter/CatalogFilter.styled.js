@@ -4,7 +4,7 @@ export const FilterForm = styled.form`
   max-width: 360px;
   display: flex;
   flex-direction: column;
-  color: ${({ theme }) => theme.text};
+  color: #101828;
 `;
 
 export const FilterLocationWrapper = styled.div`
@@ -16,7 +16,7 @@ export const FilterLocationWrapper = styled.div`
 `;
 
 export const FilterText = styled.p`
-  color: ${({ theme }) => theme.secondaryText};
+  color: #475467;
   font-weight: 500;
   line-height: 24px;
   margin-top: 32px;
@@ -29,7 +29,7 @@ export const LocationSvg = styled.svg`
   position: absolute;
   left: 18px;
   bottom: 18px;
-  stroke: ${({ theme }) => theme.placeholder};
+  stroke: rgba(16, 24, 40, 0.6);
 `;
 
 export const FilterTextInput = styled.input`
@@ -44,11 +44,11 @@ export const FilterTextInput = styled.input`
   border: 'none';
 
   border-radius: 10px;
-  background: ${({ theme }) => theme.input};
+  background: #f7f7f7;
   line-height: 20px;
 
   &::placeholder {
-    color: ${({ theme }) => theme.placeholder};
+    color: rgba(16, 24, 40, 0.6);
   }
 
   &:focus {
@@ -56,7 +56,7 @@ export const FilterTextInput = styled.input`
   }
 
   &:focus + ${LocationSvg}, &:not(:placeholder-shown) + ${LocationSvg} {
-    stroke: ${({ theme }) => theme.iconStroke};
+    stroke: #101828;
   }
 `;
 
@@ -91,7 +91,7 @@ export const Legend = styled.legend`
     bottom: -24px;
     width: 360px;
     height: 1px;
-    background-color: ${({ theme }) => theme.border};
+    background-color: rgba(16, 24, 40, 0.2);
     z-index: 5;
   }
 `;
@@ -107,7 +107,7 @@ export const FilterItemWrapper = styled.div`
   width: 113px;
   height: 95px;
   border-radius: 10px;
-  border: 1px solid ${({ theme }) => theme.border};
+  border: 1px solid rgba(16, 24, 40, 0.2);
 
   display: flex;
   flex-direction: column;
@@ -123,11 +123,11 @@ export const FilterCheckbox = styled.input`
     + ${FilterItemWrapper},
     &[type='radio']:checked
     + ${FilterItemWrapper} {
-    border-color: ${({ theme }) => theme.filterChecked};
+    border-color: #e44848;
   }
 
   &[type='radio']:not(:checked) + ${FilterItemWrapper} {
-    border-color: ${({ theme }) => theme.border};
+    border-color: rgba(16, 24, 40, 0.2);
   }
 `;
 
@@ -138,7 +138,7 @@ export const FilterItemLabel = styled.label`
 `;
 
 export const FilterIcon = styled.svg`
-  fill: ${({ theme }) => theme.iconFill};
+  fill: #101828;
   width: 32px;
   height: 32px;
 `;

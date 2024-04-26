@@ -7,7 +7,7 @@ export const ModalBackdrop = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  background-color: ${({ theme }) => theme.modalBackdrop};
+  background-color: rgba(17, 18, 19, 0.4);
   z-index: 99;
 
   display: flex;
@@ -26,7 +26,7 @@ export const CamperWindow = styled.div`
   position: relative;
 
   border-radius: 20px;
-  background: ${({ theme }) => theme.body};
+  background: #fff;
 
   & > *:not(:last-child) {
     margin-bottom: 24px;
@@ -58,12 +58,12 @@ export const ImageGallery = styled.ul`
 export const ModalInfo = styled.div`
   display: flex;
   gap: 40px;
-  border-bottom: 1px solid ${({ theme }) => theme.border};
+  border-bottom: 1px solid rgba(16, 24, 40, 0.2);
   padding-bottom: 24px;
 `;
 
 export const AdditionalInfoButton = styled(NavLink)`
-  color: ${({ theme }) => theme.text};
+  color: #101828;
   font-size: 20px;
   font-weight: 600;
   line-height: 24px;
@@ -76,7 +76,7 @@ export const AdditionalInfoButton = styled(NavLink)`
     bottom: -27px;
     width: 100%;
     height: 5px;
-    background-color: ${({ theme }) => theme.activePage};
+    background-color: #e44848;
     z-index: 5;
   }
 `;

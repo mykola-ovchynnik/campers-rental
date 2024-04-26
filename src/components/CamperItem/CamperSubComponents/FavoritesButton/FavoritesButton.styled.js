@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { ReactComponent as HeartSVG } from '../../../../icons/heart.svg';
 
 export const HeartIcon = styled(HeartSVG)`
-  fill: ${props => (props.isfavorite ? props.theme.favoritesIconFill : 'none')};
-  stroke: ${props => (props.isfavorite ? 'none' : props.theme.iconFill)};
+  fill: ${props => (props.isfavorite ? '#E44848' : 'none')};
+  stroke: ${props => (props.isfavorite ? 'none' : '#101828')};
   transition: transform 0.1s ease-in-out;
   cursor: pointer;
 `;

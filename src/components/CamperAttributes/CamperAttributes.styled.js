@@ -14,14 +14,9 @@ export const AttributeItem = styled.li`
   align-items: center;
   padding: 12px 18px;
   border-radius: 100px;
-  background: ${({ theme }) => theme.input};
+  background: #f7f7f7;
   font-weight: 500;
   line-height: 20px;
-  width: 100%;
-
-  @media (min-width: 768px) {
-    width: auto;
-  }
 `;
 
 export const AttributeSvg = styled.svg`
@@ -31,7 +26,7 @@ export const AttributeSvg = styled.svg`
   justify-content: center;
   align-items: center;
   margin-right: 8px;
-  fill: ${({ theme }) => theme.iconFill};
+  fill: #101828;
 `;
 
 export const AttributeInfo = styled.p`

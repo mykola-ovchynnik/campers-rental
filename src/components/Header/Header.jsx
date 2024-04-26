@@ -1,11 +1,5 @@
-import {
-  HeaderStyled,
-  HeaderWrapper,
-  NavBar,
-  NavLinkStyled,
-} from './Header.styled';
+import { HeaderStyled, HeaderWrapper, NavBar, NavLinkStyled } from './Header.styled';
 import { Container } from '../../styles/StyledComponents';
-import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
 export const Header = () => {
   return (
@@ -17,8 +11,6 @@ export const Header = () => {
           </NavLinkStyled>
 
           <NavBar>
-            <ThemeToggle />
-
             <NavLinkStyled to="/" activeclassname="active">
               Home
             </NavLinkStyled>

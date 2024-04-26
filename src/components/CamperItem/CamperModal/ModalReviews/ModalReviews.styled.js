@@ -12,7 +12,6 @@ export const ReviewItem = styled.li`
 `;
 
 export const ReviewerName = styled.p`
-  color: ${({ theme }) => theme.text};
   font-size: 18px;
   font-weight: 600;
   line-height: 24px;
@@ -27,7 +26,7 @@ export const NameRatingWrapper = styled.div`
 `;
 
 export const ReviewerComment = styled.p`
-  color: ${({ theme }) => theme.secondaryText};
+  color: #475467;
 `;
 
 export const Stars = styled.ul`

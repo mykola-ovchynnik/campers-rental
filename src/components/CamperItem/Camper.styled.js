@@ -6,7 +6,7 @@ export const CamperItem = styled.li`
   gap: 24px;
   padding: 24px;
   border-radius: 20px;
-  border: 1px solid ${({ theme }) => theme.border};
+  border: 1px solid rgba(16, 24, 40, 0.2);
   width: 100%;
 `;
 
@@ -28,7 +28,7 @@ export const ItemMainInfo = styled.div`
 
 export const CamperDescription = styled.p`
   display: inline;
-  color: var(--gray-color);
+  color: #475467;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -84,15 +84,15 @@ export const ShowMoreBtn = styled(Link)`
   align-items: center;
   border: none;
   border-radius: 200px;
-  background: var(--red-color);
-  color: var(--white-color);
+  background: #e44848;
+  color: #fff;
   font-weight: 500;
   letter-spacing: -0.08px;
   line-height: 24px;
   transition: transform 0.1s ease-in-out;
 
   &:hover {
-    background-color: var(--red-color-hover);
+    background-color: #d84343;
     cursor: pointer;
   }
 

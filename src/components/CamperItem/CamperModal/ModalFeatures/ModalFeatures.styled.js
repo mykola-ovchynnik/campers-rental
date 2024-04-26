@@ -10,7 +10,6 @@ export const FeaturesWrapper = styled.div`
 export const ModalDetails = styled.div``;
 
 export const ModalDetailsTitle = styled.h3`
-  color: ${({ theme }) => theme.text};
   font-size: 20px;
   font-weight: 600;
   line-height: 24px;
@@ -23,7 +22,7 @@ export const ModalDetailsTitle = styled.h3`
     bottom: -24px;
     width: 100%;
     height: 1px;
-    background-color: ${({ theme }) => theme.border};
+    background-color: rgba(16, 24, 40, 0.2);
     z-index: 5;
   }
 `;
@@ -42,7 +41,6 @@ export const ModalDetailsItem = styled.li`
 `;
 
 export const ModalDetailsText = styled.p`
-  color: ${({ theme }) => theme.text};
   text-align: center;
   font-size: 18px;
   font-weight: 500;

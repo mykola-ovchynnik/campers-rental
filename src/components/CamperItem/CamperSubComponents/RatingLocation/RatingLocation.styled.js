@@ -14,7 +14,7 @@ export const StarLocationIcon = styled.svg`
   width: 16px;
   height: 16px;
   margin-right: 4px;
-  stroke: ${({ theme }) => theme.text};
+  stroke: #101828;
 `;
 
 export const RatingLocation = styled.p`
@@ -28,6 +28,6 @@ export const RatingLocation = styled.p`
     left: 0;
     width: 100%;
     height: 1px;
-    background-color: ${({ theme }) => theme.text};
+    background-color: #101828;
   }
 `;

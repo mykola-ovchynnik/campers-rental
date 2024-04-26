@@ -1,9 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from '../Layout/Layout';
-import { ThemeProvider } from 'styled-components';
-import { useSelector } from 'react-redux';
-import { darkTheme, lightTheme } from '../../styles/themes';
-import { themeSelector } from '../../store/themeReducer/themeSlice';
 import { GlobalLoader } from '../GlobalLoader/GlobalLoader';
 import { lazy } from 'react';
 import { ModalReviews } from '../CamperItem/CamperModal/ModalReviews/ModalReviews';
@@ -15,10 +11,8 @@ const CamperModal = lazy(() => import('../CamperItem/CamperModal/CamperModal'));
 const ModalFeatures = lazy(() => import('../CamperItem/CamperModal/ModalFeatures/ModalFeatures'));
 
 export const App = () => {
-  const darkMode = useSelector(themeSelector);
-
   return (
-    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+    <>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
@@ -42,6 +36,6 @@ export const App = () => {
       </Routes>
 
       <GlobalLoader />
-    </ThemeProvider>
+    </>
   );
 };

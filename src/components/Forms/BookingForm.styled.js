@@ -7,11 +7,10 @@ export const BookForm = styled.form`
   height: 532px;
   padding: 24px;
   border-radius: 10px;
-  border: 1px solid ${({ theme }) => theme.border};
+  border: 1px solid rgba(16, 24, 40, 0.2);
 `;
 
 export const BookFormTitle = styled.h3`
-  color: ${({ theme }) => theme.text};
   font-size: 20px;
   font-weight: 600;
   line-height: 24px;
@@ -19,7 +18,7 @@ export const BookFormTitle = styled.h3`
 `;
 
 export const BookFormText = styled.p`
-  color: ${({ theme }) => theme.secondaryText};
+  color: #475467;
   margin-bottom: 24px;
 `;
 
@@ -32,7 +31,7 @@ export const InputField = styled.input`
   height: 56px;
   border: none;
   border-radius: 10px;
-  background: var(--Inputs, #f7f7f7);
+  background: #f7f7f7;
   margin-bottom: 14px;
   padding: 18px;
 
@@ -50,7 +49,7 @@ export const TextArea = styled.textarea`
   height: 111px;
   border-radius: 10px;
   border: none;
-  background: var(--Inputs, #f7f7f7);
+  background: #f7f7f7;
   margin-bottom: 24px;
   padding: 18px;
 
