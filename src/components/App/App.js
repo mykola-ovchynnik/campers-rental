@@ -5,7 +5,7 @@ import { lazy } from 'react';
 import { ModalReviews } from '../CamperItem/CamperModal/ModalReviews/ModalReviews';
 
 const CampersCatalog = lazy(() => import('../../pages/CampersCatalog/CampersCataloge'));
-const HomePage = lazy(() => import('../../pages/HomePage'));
+const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
 const FavoritesPage = lazy(() => import('../../pages/FavoritesPage/FavoritesPage'));
 const CamperModal = lazy(() => import('../CamperItem/CamperModal/CamperModal'));
 const ModalFeatures = lazy(() => import('../CamperItem/CamperModal/ModalFeatures/ModalFeatures'));
