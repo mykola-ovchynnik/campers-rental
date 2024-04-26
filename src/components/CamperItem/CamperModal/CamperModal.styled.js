@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import icons from '../../../icons/icons.svg';
 
 export const ModalBackdrop = styled.div`
   width: 100vw;

@@ -1,4 +1,3 @@
-import { ReactComponent as StarSVG } from '../../../../icons/star.svg';
 import { ratingCalculator } from '../../../../utils/utils';
 import { RatingLocation, RatingsLocationSpan, StarLocationIcon } from './RatingLocation.styled';
 import icons from '../../../../icons/icons.svg';
